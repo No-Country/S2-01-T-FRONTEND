@@ -1,0 +1,111 @@
+.container{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.contenedor {
+    display: block;
+    font-size: toRem(15);
+    padding-top: 0%;
+    margin-top: 0px;
+    margin: toRem(50) auto;
+    text-align: center;
+    @include exo-font;
+    //background: linear-gradient(159.53deg, rgb(5, 6, 11) 4.03%, rgb(27, 32, 53) 23.26%, rgb(10, 12, 15) 93.99%);
+    width: 80%;
+    position: relative;
+}
+
+.title-login{
+    @include exo-font;
+    color: rgb(14, 13, 13);
+    font-size: toRem(20);
+    font-weight: 500;
+
+}
+
+.container-img{
+    margin: toRem(0) auto;
+    width: toRem(400);
+    display: flex;
+    justify-content: center;
+}
+
+.img-login {
+    max-width: toRem(200);
+    padding-top: toRem(10);
+}
+
+.container-title{
+    display: block;
+    columns: toRem(400);
+    margin: 0 auto;
+    width: toRem(400);
+}
+
+.container-input{
+    display: block;
+    margin: 0 auto;
+    width: toRem(400);
+}
+
+.label-login{
+    @include exo-font;
+    float: left !important;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(12, 12, 12);
+    padding: 1rem 0 0.1rem 0;
+}
+
+.title-in{
+    float: left;
+    font-size: 30px;
+    color: rgb(15, 15, 15);
+    font-weight: 700;
+}
+
+.divisor{
+    width: 100%;
+    background: rgb(255, 255, 255);
+    height: toRem(3);
+
+}
+
+.icon-login{
+    padding-top: 0;
+    padding-bottom: 0;
+    color:  #f15245 !important;
+}
+
+.forgot-login{
+    display: block;
+    columns: toRem(400);
+    margin: 0 auto;
+    width: toRem(140);
+
+    & .forgot-pass{
+        color: #f15245;
+        font-size: toRem(14);
+        text-decoration: none;
+                 
+    }
+
+    & .forgot-pass:hover{
+        cursor: pointer;
+    }
+
+    
+
+    & .div-forget{
+        margin-top: 0;
+        margin-bottom: toRem(10);
+        background: rgb(206, 137, 9);
+        height: toRem(0.9);
+        border: 0;
+    }
+
+
+}
+

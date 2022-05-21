@@ -1,0 +1,91 @@
+.signin-btn {
+    @include exo-font;
+    font-weight: 500;
+    font-size: toRem(21);
+    padding: toRem(15) toRem(15);
+    margin-top: toRem(15);
+    margin-bottom: toRem(10);
+    border-radius: 0.3125rem;
+    background: radial-gradient(
+        circle at 24% 100%,
+        #fed800 4%,
+        #7e8c03 30%,
+        #ff9400 62%,
+        #d5070b 85%,
+        #850751
+    );
+    border: none;
+    height: 2.5rem;
+    line-height: 0;
+    transition: 0.5s;
+    width: toRem(400);
+    color: rgb(255, 255, 255);
+    filter: brightness(80%);
+
+    &:hover {
+        cursor: pointer;
+        background: radial-gradient(
+        circle at 23% 100%,
+        #fed373 4%,
+        #f15245 30%,
+        #d92e7f 62%,
+        #9b36b7 85%,
+        #515ecf
+    );
+        transform: scale(0.95);
+        
+    }
+
+}
+
+.register-btn {
+    @include primary-font;
+    font-weight: 500;
+    font-size: toRem(22);
+    padding: 1.5rem 1.1rem;
+    border-radius: toRem(45);
+    //background: #de6600;
+    background: radial-gradient(
+        circle at 33% 100%,
+        #fed373 4%,
+        #f15245 30%,
+        #d92e7f 62%,
+        #9b36b7 85%,
+        #515ecf
+    );
+    border: none;
+    height: 2.5rem;
+    line-height: 0;
+    transition: 0.5s;
+    width: toRem(400);
+    color: white;
+    // text-shadow: 
+    // -1px -1px 0 #003f5a,
+    // -1px 1px 0 #003f5a,
+    // 1px -1px 0 #003f5a,
+    // 1px 1px 0 #003f5a
+    // ;
+
+    &:hover {
+        //background: #fea02f;
+        background: radial-gradient(
+        circle at 33% 80%,
+        #fed373 4%,
+        #f15245 30%,
+        #d92e7f 62%,
+        #9b36b7 85%,
+        #515ecf
+    );
+        transform: scale(0.95);
+        
+    }
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+
+    & .button-ctr{
+        margin: toRem(10) auto;
+    }
+}

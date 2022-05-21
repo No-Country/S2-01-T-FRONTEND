@@ -1,0 +1,92 @@
+// Responsive
+
+@mixin w() {
+    @media only screen and (max-width: "3000px") {
+        @content;
+    }
+}
+
+@mixin x() {
+    @media only screen and (max-width: "1339px") {
+        @content;
+    }
+}
+
+@mixin d() {
+    @media only screen and (max-width: "1179px") {
+        @content;
+    }
+}
+
+@mixin t() {
+    @media only screen and (max-width: "1023px") {
+        @content;
+    }
+}
+
+@mixin m() {
+    @media only screen and (max-width: "767px") {
+        @content;
+    }
+}
+
+@mixin a() {
+    @media only screen and (max-width: "639px") {
+        @content;
+    }
+}
+
+@mixin s() {
+    @media only screen and (max-width: "474px") {
+        @content;
+    }
+}
+
+// Fonts
+@mixin primary-font() {
+    font-family: "Poppins", sans-serif;
+}
+
+@mixin secundary-font() {
+    font-family: "Inter", sans-serif;
+}
+
+@mixin exo-font() {
+    font-family: "Exo", sans-serif;
+}
+
+.input-field {
+    @include primary-font;
+}
+
+.signup-link {
+    @include primary-font;
+}
+
+.recover-pass {
+    @include primary-font;
+
+    .pass-link {
+        @include primary-font;
+    }
+}
+
+.next-login {
+    @include primary-font;
+}
+
+.wellcome-text {
+    @include primary-font;
+}
+
+.subTitle {
+    @include primary-font;
+}
+
+.tagline {
+    @include secundary-font;
+}
+
+.separator {
+    @include primary-font;
+}

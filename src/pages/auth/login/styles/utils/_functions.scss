@@ -1,0 +1,25 @@
+// px a rem
+// html -> 16px
+// @media ================= {
+//     html {
+//         font-size:14px
+//     }
+// }
+
+// 16px -> 1rem
+// 32px -> 2rem
+
+// 1rem -> 14px
+
+// 4rem -> 60px -> desktop
+// 2rem -> 32px -> tablet
+
+// text {
+//     font-size: 
+// }
+
+@function toRem($px:0) {
+    $remValue: calc(($px / 16)*1rem);
+    @return $remValue;
+}
+
