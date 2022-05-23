@@ -15,13 +15,9 @@ const LoginPage = () => {
 
   // --------------------------------------------------------------------------
 
-<<<<<<< HEAD
-  const handleInput = (event) => {
-    
-    setDataUser({ ...dataUser, [event.target.name]: event.target.value });
-  };  
+
   
-=======
+
   const refElement = useRef();
 
   //   const handleInput = (event) => {
@@ -52,7 +48,7 @@ const LoginPage = () => {
     setState: { setPass },
   };
 
->>>>>>> b17f4af00f9576f3dabf0d7fa6443f31eba442b7
+
   return (
     <>
       <div ref={refElement} className="container">
