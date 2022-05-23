@@ -5,16 +5,36 @@
 }
 
 .contenedor {
-    display: block;
+    display: flex;
+    flex-direction: column;
     font-size: toRem(15);
     padding-top: 0%;
     margin-top: 0px;
-    margin: toRem(50) auto;
+    margin: toRem(30) auto;
     text-align: center;
     @include exo-font;
     //background: linear-gradient(159.53deg, rgb(5, 6, 11) 4.03%, rgb(27, 32, 53) 23.26%, rgb(10, 12, 15) 93.99%);
     width: 80%;
     position: relative;
+
+    & .separator {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 1.25rem;
+        font-weight: 400;
+        font-size: 1rem;
+
+    }
+
+    & hr {
+        flex: 1;
+        background: var(--verde);
+        border: 0.125rem solid var(--verde);
+        ;
+
+    }
+
 }
 
 .title-login{
@@ -34,7 +54,7 @@
 
 .img-login {
     max-width: toRem(200);
-    padding-top: toRem(10);
+    padding-top: toRem(5);
 }
 
 .container-title{
@@ -56,7 +76,7 @@
     font-size: 1.2rem;
     font-weight: 500;
     color: rgb(12, 12, 12);
-    padding: 1rem 0 0.1rem 0;
+    padding: 0.8rem 0 0.1rem 0;
 }
 
 .title-in{
@@ -68,7 +88,6 @@
 
 .divisor{
     width: 100%;
-    background: rgb(255, 255, 255);
     height: toRem(3);
 
 }
@@ -86,7 +105,7 @@
     width: toRem(140);
 
     & .forgot-pass{
-        color: #f15245;
+        color: var(--red);
         font-size: toRem(14);
         text-decoration: none;
                  
@@ -109,3 +128,28 @@
 
 }
 
+.error-login{
+    background: rgba(167, 8, 8,0.9);
+    border-radius: 0.3125rem;
+
+    & .text-error{
+        font-size: toRem(13);
+        padding: toRem(5);
+        font-weight: 400;
+    }
+    & .icon-error{
+        line-height: toRem(20);
+        font-size: toRem(16);
+    }
+}
+
+.msg-error-email{
+    
+    margin: toRem(5) 0 0 0;
+    padding-left: toRem(10);
+    text-align: left;
+    font-size: toRem(12);
+    color: var(--red);
+    display: none;
+    
+}

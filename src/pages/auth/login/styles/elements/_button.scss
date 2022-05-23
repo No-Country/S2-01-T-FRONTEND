@@ -3,36 +3,24 @@
     font-weight: 500;
     font-size: toRem(21);
     padding: toRem(15) toRem(15);
-    margin-top: toRem(15);
+    margin-top: toRem(35);
     margin-bottom: toRem(10);
     border-radius: 0.3125rem;
-    background: radial-gradient(
-        circle at 24% 100%,
-        #fed800 4%,
-        #7e8c03 30%,
-        #ff9400 62%,
-        #d5070b 85%,
-        #850751
-    );
+    background: var(--verde);
+
     border: none;
     height: 2.5rem;
     line-height: 0;
     transition: 0.5s;
     width: toRem(400);
     color: rgb(255, 255, 255);
-    filter: brightness(80%);
+    filter: brightness(100%);
 
     &:hover {
         cursor: pointer;
-        background: radial-gradient(
-        circle at 23% 100%,
-        #fed373 4%,
-        #f15245 30%,
-        #d92e7f 62%,
-        #9b36b7 85%,
-        #515ecf
-    );
-        transform: scale(0.95);
+        background: var(--verde);
+        transform: scale(0.98);
+        box-shadow: toRem(5) 0px toRem(30) rgb(121, 119, 119)
         
     }
 
