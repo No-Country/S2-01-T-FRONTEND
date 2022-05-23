@@ -4,23 +4,46 @@ import "../styles/_loginStyle.scss";
 import logoFiado from "../../../../assets/img/el-fiado.png";
 
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
-import CancelIcon from "@mui/icons-material/Cancel";
+
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
-import { CheckCircleIcon } from "@mui/icons-material/";
+import InputComp from "../../../../components/inputs/Input";
 
 const LoginPage = () => {
   // ----------------------- Variables de estados -----------------------------
-  const [dataUser, setDataUser] = useState([]);
+  const [user, setUser] = useState({ campo: "", valido: null });
+  const [pass, setPass] = useState({ campo: "", valido: null });
 
   // --------------------------------------------------------------------------
 
   const refElement = useRef();
 
-  const handleInput = (event) => {
-    setDataUser({ ...dataUser, [event.target.name]: event.target.value });
-  };
+  //   const handleInput = (event) => {
+  //     setDataUser({ ...dataUser, [event.target.name]: event.target.value });
+  //   };
 
   const handleSetData = () => {};
+
+  const userProps = {
+    label: "Usuarios",
+    name: "user",
+    id: "user",
+    placeHold: "ejemplo@email.com",
+    type: "email",
+    msgError: "Ingrese un correo valido",
+    estado: { user },
+    setEstado: { setUser },
+  };
+
+  const passProps = {
+    label: "Contraseña",
+    name: "password",
+    id: "pasword",
+    placeHold: "Ingresar contraseña",
+    type: "password",
+    msgError: "Ingrese una contraseña valida",
+    state: { pass },
+    setState: { setPass },
+  };
 
   return (
     <>
@@ -42,39 +65,28 @@ const LoginPage = () => {
           </div>
           <div className="container-input">
             <form>
-              <label htmlFor="user" className="label-login">
-                Usuario
-              </label>
-              <div className="group-input">
-                <input
-                  id="user"
-                  name="user"
-                  type="email"
-                  placeholder="ejemplo@email.co"
-                  className="input-login"
-                  onChange={handleInput}
-                />
-                <CancelIcon className="icon-validate-cancel" />
-              </div>
-              <label htmlFor="password" className="label-login">
-                Contraseña
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                placeholder="Ingresar contraseña"
-                className="input-login"
-                onChange={handleInput}
+              <InputComp
+                label="Usuarios"
+                name="user"
+                id="user"
+                placeHold="ejemplo@email.com"
+                type="email"
+                msgError="Ingrese un correo valido"
+                estado={user}
+                setEstado={setUser}
               />
 
-              <div className="error-login">
-                <p className="text-error">
-                  <ReportProblemIcon className="icon-error" />
-                  <b>Error: </b> Por favor diligenciar el formulario
-                  correctamente
-                </p>
-              </div>
+              {/*<InputComp enviosProps={passProps} />*/}
+
+              {false && (
+                <div className="error-login">
+                  <p className="text-error">
+                    <ReportProblemIcon className="icon-error" />
+                    <b>Error: </b> Por favor diligenciar el formulario
+                    correctamente
+                  </p>
+                </div>
+              )}
 
               <div className="container-input">
                 <button

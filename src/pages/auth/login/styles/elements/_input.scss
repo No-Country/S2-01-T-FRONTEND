@@ -27,22 +27,22 @@
 .icon-validate-cancel{
     position: absolute;
     right: toRem(10);
-    bottom: toRem(8);
+    bottom: toRem(29);
     z-index: 100;
     font-size: toRem(16);
     color: var(--red);
-    opacity: 1;
+    opacity: 0;
 
 }
 
 .icon-validate-ok{
     position: absolute;
     right: toRem(10);
-    bottom: toRem(8);
+    bottom: toRem(29);
     z-index: 100;
     font-size: toRem(16);
     color: greenyellow;
-    opacity: 1;
+    opacity: 0;
 }
 
 .group-input{

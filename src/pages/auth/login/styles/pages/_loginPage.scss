@@ -142,3 +142,14 @@
         font-size: toRem(16);
     }
 }
+
+.msg-error-email{
+    
+    margin: toRem(5) 0 0 0;
+    padding-left: toRem(10);
+    text-align: left;
+    font-size: toRem(12);
+    color: var(--red);
+    display: none;
+    
+}
