@@ -12,9 +12,10 @@ const LoginPage = () => {
   // --------------------------------------------------------------------------
 
   const handleInput = (event) => {
+    
     setDataUser({ ...dataUser, [event.target.name]: event.target.value });
-  };
-
+  };  
+  
   return (
     <>
       <div className="container">
