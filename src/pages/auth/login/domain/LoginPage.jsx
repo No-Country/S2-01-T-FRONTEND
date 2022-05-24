@@ -15,6 +15,12 @@ const LoginPage = () => {
 
   // --------------------------------------------------------------------------
 
+<<<<<<< HEAD
+=======
+
+  
+
+>>>>>>> 6f48d8eb07a891eea7d65dc9b7150f091cfa59c9
   const refElement = useRef();
 
   //   const handleInput = (event) => {
@@ -42,6 +48,10 @@ const LoginPage = () => {
     telefono: /^\d{7,14}$/, // 7 a 14 numeros.
   };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6f48d8eb07a891eea7d65dc9b7150f091cfa59c9
   return (
     <>
       <div ref={refElement} className="container">
