@@ -24,13 +24,18 @@ const InputComp = ({
     setEstado({ ...estado, campo: event.target.value });
   };
 
-  const handleKey = () => {
+  const validate = () => {
     if (expresionRegular) {
-      console.log("first");
+      if (expresionRegular.test(estado.campo)) {
+        // Correcto
+        setEstado({ ...estado, valido: "true" });
+      } else {
+        setEstado({ ...estado, valido: "false" });
+      }
+    } else {
+      console.log("No existe expresion regular");
     }
   };
-
-  const handleBlur = () => {};
 
   return (
     <div>
@@ -46,15 +51,21 @@ const InputComp = ({
           value={estado.campo}
           className="input-login"
           onChange={handleInput}
-          onKeyUp={() => {}}
-          onBlur={() => {}}
+          onKeyUp={validate}
+          onBlur={validate}
+          valido={estado.valido}
         />
-        {estado ? (
-          <CancelIcon className="icon-validate-cancel" />
+        {estado.valido === null ? (
+          ((<CancelIcon className="icon-validate-cancel" />),
+          (<CheckCircleIcon className="icon-validate-ok" />))
+        ) : estado.valido === "false" ? (
+          <CancelIcon className="icon-validate-cancel visible-x" />
         ) : (
-          <CheckCircleIcon className="icon-validate-ok" />
+          <CheckCircleIcon className="icon-validate-ok visible-ok" />
         )}
-        <p className="msg-error-email">{msgError}</p>
+        {estado.valido === "false" && (
+          <p className="msg-error-email">{msgError}</p>
+        )}
       </div>
     </div>
   );
