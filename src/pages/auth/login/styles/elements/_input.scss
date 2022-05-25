@@ -15,19 +15,24 @@
     }
 
     &:hover{
-        border: toRem(2) solid var(--verde);
         outline: none;
         box-shadow: toRem(3) 0 toRem(30) rgba(163,163,163, 0.6);
     }
+}
 
+.visible-x{
+    opacity: 1 !important;
 
+}
 
+.visible-ok{
+    opacity: 1 !important;
 }
 
 .icon-validate-cancel{
     position: absolute;
     right: toRem(10);
-    bottom: toRem(29);
+    bottom: toRem(8);
     z-index: 100;
     font-size: toRem(16);
     color: var(--red);
@@ -38,10 +43,10 @@
 .icon-validate-ok{
     position: absolute;
     right: toRem(10);
-    bottom: toRem(29);
+    bottom: toRem(8);
     z-index: 100;
     font-size: toRem(16);
-    color: greenyellow;
+    color: rgb(109, 172, 15);
     opacity: 0;
 }
 

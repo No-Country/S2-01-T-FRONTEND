@@ -15,9 +15,6 @@ const LoginPage = () => {
 
   // --------------------------------------------------------------------------
 
-
-  
-
   const refElement = useRef();
 
   //   const handleInput = (event) => {
@@ -37,17 +34,13 @@ const LoginPage = () => {
     setEstado: { setUser },
   };
 
-  const passProps = {
-    label: "Contraseña",
-    name: "password",
-    id: "pasword",
-    placeHold: "Ingresar contraseña",
-    type: "password",
-    msgError: "Ingrese una contraseña valida",
-    state: { pass },
-    setState: { setPass },
+  const expresiones = {
+    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    password: /^[a-zA-Z0-9\_\-.]{6,12}$/, // 6 a 12 digitos.
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    telefono: /^\d{7,14}$/, // 7 a 14 numeros.
   };
-
 
   return (
     <>
@@ -76,8 +69,21 @@ const LoginPage = () => {
                 placeHold="ejemplo@email.com"
                 type="email"
                 msgError="Ingrese un correo valido"
+                expresionRegular={expresiones.correo}
                 estado={user}
                 setEstado={setUser}
+              />
+
+              <InputComp
+                label="Constraseña"
+                name="pass"
+                id="pass"
+                placeHold="Ingrese contraseña"
+                type="password"
+                msgError="Ingrese una constraseña valida"
+                expresionRegular={expresiones.password}
+                estado={pass}
+                setEstado={setPass}
               />
 
               {/*<InputComp enviosProps={passProps} />*/}
