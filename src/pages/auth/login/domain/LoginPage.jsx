@@ -5,7 +5,7 @@ import logoFiado from "../../../../assets/img/el-fiado.png";
 
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 
-import ReportProblemIcon from "@mui/icons-material/ReportProblem";
+ import ReportProblemIcon from "@mui/icons-material/ReportProblem"; 
 import InputComp from "../../../../components/inputs/Input";
 
 const LoginPage = () => {

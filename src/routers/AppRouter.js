@@ -8,10 +8,10 @@ import Footer from "../components/footer/Footer";
 const AppRouter = () => {
   return (
     <Router>
-      <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path="/home" element={<HomePage />} />
-        <Route index element={<LoginPage />} />
+        <Route path="/" index element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer/>
     </Router>
