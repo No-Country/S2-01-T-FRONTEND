@@ -8,7 +8,7 @@ import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 import InputComp from "../../../../components/inputs/Input";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   // ----------------------- Variables de estados -----------------------------
   const [user, setUser] = useState({ campo: "", valido: null });
   const [pass, setPass] = useState({ campo: "", valido: null });
@@ -23,7 +23,7 @@ const LoginPage = () => {
 
   const handleSetData = () => {};
 
-  const userProps = {
+  /*const userProps = {
     label: "Usuarios",
     name: "user",
     id: "user",
@@ -32,7 +32,7 @@ const LoginPage = () => {
     msgError: "Ingrese un correo valido",
     estado: { user },
     setEstado: { setUser },
-  };
+  };*/
 
   const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -52,12 +52,12 @@ const LoginPage = () => {
 
           <div className="container-title">
             <h1 className="title-in">
-              <DoubleArrowIcon className="icon-login" /> Ingresar
+              <DoubleArrowIcon className="icon-login" /> Registrarme
             </h1>
           </div>
           <div className="container-title separator">
             <hr />
-            <h1 className="title-login">Que bueno que estés de vuelta</h1>
+            <h1 className="title-login">Bienvenido</h1>
             <hr className="divisor" />
           </div>
           <div className="container-input">
@@ -125,4 +125,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
