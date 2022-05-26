@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/_loginStyle.scss";
+import "../../login/styles/_loginStyle.scss";
 import logoFiado from "../../../../assets/img/el-fiado.png";
 
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
