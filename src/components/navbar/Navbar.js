@@ -1,30 +1,33 @@
 import React, { useState } from 'react';
 import logo from '../../assets/img/logo.png'
 import { AppBar, Button, Tabs, Tab, Box, Toolbar } from '@mui/material';
-import {IconoDiv,IconoImg} from '../navbar/styles/elements.navbar'
+import { IconoDiv, IconoImg } from '../navbar/styles/elementsNavbar'
+import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
     const [login, setLogin] = useState(false)
     return (<>
         <AppBar sx={{ background: "red" }} position="sticky" >
             <Toolbar>
-                <IconoDiv>
-                    <IconoImg src={logo} alt="logo" />
-                </IconoDiv>
+                <NavLink to="/">
+                    <IconoDiv>
+                        <IconoImg src={logo} alt="logo" />
+                    </IconoDiv>
+                </NavLink>
+
                 {
                     login ?
                         <Tabs sx={{ marginLeft: "auto" }}
                             textColor="inherit"
                             display="flex"
                         >
-                            <Tab label="Search" onClick={() => alert("Search")} />
-                            <Tab label="Productos" onClick={() => alert("productos")} />
-                            <Tab label="Contactanos" onClick={() => alert("Contactanos")} />
-                            <Tab label="Acerca de" onClick={() => alert("Acerca de")} />
+                            <NavLink to="/" style={{ textDecoration: "none",color:"black" }}><Tab label="Search" /></NavLink>
+                            <NavLink to="/" style={{ textDecoration: "none",color:"black" }}><Tab label="Contactanos" /></NavLink>
+                            <NavLink to="/" style={{ textDecoration: "none",color:"black" }}><Tab label="Acerca de" /></NavLink>
                         </Tabs>
                         :
                         ""
-                 }
+                }
                 <Box sx={{ marginLeft: "auto" }}>
                     {
                         login ? <Button
@@ -33,10 +36,14 @@ const Navbar = () => {
                             onClick={() => setLogin(!login)}
                         >Logout</Button>
                             :
-                            <Button
-                                variant="contained"
-                                color="success"
-                                onClick={() => setLogin(!login)}>Login</Button>
+                            <>
+                                <NavLink to="/register" style={{ textDecoration: "none" }} ><Button variant="contained" color="success" >Registrarse</Button></NavLink>
+                                <NavLink to="/login"style={{ textDecoration: "none" }}><Button
+                                    variant="contained"
+                                    color="success"
+                                    onClick={() => setLogin(!login)}>Login</Button></NavLink>
+                            </>
+
                     }
                 </Box>
             </Toolbar>
