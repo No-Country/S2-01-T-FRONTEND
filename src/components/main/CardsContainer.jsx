@@ -3,7 +3,11 @@ import styled from "styled-components";
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import logo from "../../assets/img/logo.png"
+
+import sale from "../../assets/img/sale.svg";
+import suport from "../../assets/img/suport.svg";
+import experience from "../../assets/img/experience.svg";
+import Grid from '@mui/material/Grid';
 
 
 
@@ -12,45 +16,51 @@ import logo from "../../assets/img/logo.png"
 function CardsContainer() {
     return (
         <StyledCardsContainer>
-            <Card className="card" >
-                <CardMedia
-                    component="img"
-                    alt="Logo"
-                                       
-                    image={logo}
-                    />        
-                <CardContent>
-                    <h4>Suport</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br></br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
-                </CardContent>
-            </Card>
-            <Card className="card">
-            <CardMedia
-                    component="img"
-                    alt="Logo"
-                                        
-                    image={logo}
-                    />  
-                <CardContent>
-                    <h4>Sale</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br></br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
-                </CardContent>
-            </Card>
-            <Card className="card">
-            <CardMedia
-                    component="img"
-                    alt="Logo"
-                                       
-                    image={logo}
-                    />  
-                <CardContent>
-                    <h4>Experience</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br></br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
-                </CardContent>
-            </Card>
+            <Grid container>
+                <Grid item md={4} xs={12} className="gridItem">
+                    <Card variant="outlined" className="card xs" >
+                        <CardMedia
+                            component="img"
+                            alt="Logo"
+
+                            image={suport}
+                        />
+                        <CardContent>
+                            <h4>Suport</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item md={4} xs={12} className="gridItem">
+                    <Card variant="outlined" className="card">
+                        <CardMedia
+                            component="img"
+                            alt="Logo"
+
+                            image={sale}
+                        />
+                        <CardContent>
+                            <h4>Sale</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item md={4} sm={6} className="gridItem">
+                    <Card variant="outlined" className="card" >
+                        <CardMedia
+                            component="img"
+                            alt="Logo"
+
+                            image={experience}
+                        />
+                        <CardContent>
+                            <h4>Experience</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </CardContent>
+                    </Card>
+                </Grid>
+            </Grid>
+
         </StyledCardsContainer>
     );
 }
@@ -58,22 +68,44 @@ function CardsContainer() {
 
 
 const StyledCardsContainer = styled.div`
-    margin:2% 10%;
-    display:flex;
-    text-align:center;
-    justify-content:space-around;
-    width:80%;
+
+
+    img{
+        margin-top:1em;
+        width:20%;
+
+    }
+
+
+    .gridItem{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
     
     
 
     .card{
+        display:flex;
+        flex-direction:column;
+        text-align:center;     
+        align-items:center;
+        justify-content:center;  
         margin-top:1em;
-        width:15%;
+        width:40%;
         background-color:#EED9C7;
         border-radius:2em;
+        box-shadow: rgba(0, 0, 0, 0.15) 3.2px 2px 5px;
         
-      }
+        
+      } 
 `
 
 export default CardsContainer
+
+
+
+
 
