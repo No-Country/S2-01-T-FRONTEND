@@ -1,0 +1,13 @@
+article {
+    background-color: var(--white);
+    text-align: justify;
+}
+
+.MuiTypography-h4 {
+    padding: 10vh 30vw 0;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

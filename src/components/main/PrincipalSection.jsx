@@ -2,13 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
+import Container from '@mui/material/Container';
 
 function PrincipalSection() {
     return (
         <PrincipalSectionStyled>
-            <h2>Lorem ipsum dolor sit amet, consectetur.</h2>          
-            <p>Latin words, combined with a handful of model sentence structures,<br></br> to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum <br></br>is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-            <Button  color="warning" variant="contained" endIcon={<SearchIcon />}>Search </Button>
+
+            <Container>
+                <h2>Lorem ipsum dolor sit amet, consectetur.</h2>
+                <p>Latin words, combined with a handful of model sentence structures,<br></br> to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum <br></br>is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                <Button color="warning" variant="contained" endIcon={<SearchIcon />}>Search </Button>
+            </Container>
+
         </PrincipalSectionStyled>
     )
 
@@ -16,6 +21,7 @@ function PrincipalSection() {
 
 const PrincipalSectionStyled = styled.div`
 
+    
     display:flex;
     flex-direction:column;
     justify-content:center;
