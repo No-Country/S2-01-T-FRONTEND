@@ -7,6 +7,7 @@ import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 import InputComp from "../../../../components/inputs/Input";
+import { EXPRESIONES } from "../../../../models/ExpRegulares";
 
 const RegisterPage = () => {
   // ----------------------- Variables de estados -----------------------------
@@ -34,14 +35,6 @@ const RegisterPage = () => {
     setEstado: { setUser },
   };*/
 
-  const expresiones = {
-    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    password: /^[a-zA-Z0-9\_\-.]{6,12}$/, // 6 a 12 digitos.
-    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    telefono: /^\d{7,14}$/, // 7 a 14 numeros.
-  };
-
   return (
     <>
       <div ref={refElement} className="container">
@@ -63,25 +56,25 @@ const RegisterPage = () => {
           <div className="container-input">
             <form>
               <InputComp
-                label="Usuarios"
-                name="user"
-                id="user"
-                placeHold="ejemplo@email.com"
-                type="email"
-                msgError="Ingrese un correo valido"
-                expresionRegular={expresiones.correo}
+                label="Nombre Completo"
+                name="name"
+                id="name"
+                placeHold="Nombre"
+                type="text"
+                msgError="Ingrese un nombre valido"
+                expresionRegular={EXPRESIONES.NAME}
                 estado={user}
                 setEstado={setUser}
               />
 
               <InputComp
-                label="Constraseña"
+                label="Tipo"
                 name="pass"
                 id="pass"
                 placeHold="Ingrese contraseña"
                 type="password"
                 msgError="Ingrese una constraseña valida"
-                expresionRegular={expresiones.password}
+                expresionRegular={EXPRESIONES.PASSWORD}
                 estado={pass}
                 setEstado={setPass}
               />
