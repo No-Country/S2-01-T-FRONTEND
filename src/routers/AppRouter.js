@@ -6,17 +6,14 @@ import HomePage from "../pages/home/HomePage";
 import Footer from "../components/footer/Footer";
 import Error404Page from "../pages/404/Error404Page";
 import RegisterPage from "../pages/auth/register/domain/RegisterPage";
-<<<<<<< HEAD
+
 import UserList from "../components/userList/UserList";
-=======
 import HelpPage from "../pages/help/HelpPage";
->>>>>>> d9bfd2e36362cd5c0a84314bd10f00af18f0d4ef
 
 const AppRouter = () => {
   return (
     <Router>
       <Navbar />
-      <UserList />
       <Routes>
         <Route path="/" index element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
