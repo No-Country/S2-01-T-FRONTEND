@@ -4,7 +4,7 @@ import "../help/styles/_helpStyle.scss";
 const HelpPage = () => {
     return (
         <article>
-            <Typography variant="h4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Typography>
+            <Typography variant="h4" sx={{ fontWeight: 'bold', textAlign: 'center' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Typography>
             <section>
                 <Box component="div"
                     sx={{
@@ -15,6 +15,7 @@ const HelpPage = () => {
                     }}>
                     <Typography variant="h5"
                         sx={{
+                            fontWeight: 'bold',
                             width: 1/2
                         }}>1.- Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </Typography>
@@ -30,7 +31,7 @@ const HelpPage = () => {
                         width: 3/4
                     }}
                     alt=""
-                    src="https://s3-alpha-sig.figma.com/img/3c69/a676/688a7d744985903d5e62967779c4b621?Expires=1654473600&Signature=eKM-nkZyGmJW4EAaPDVdCNQ1Bdv8yVQP19~Gzyq0P8eYViQtuC4WQMMqGoUhL8vQx4ZZZ~NhoQv1UQOmPbG7RyA9S2Qr9MNIZiidH022bm-3InuuPZw9JTMBocEDNBDwc0PJg~tkZCA1fP7d1HxaaBB4rgSiY-KREFQVxQ8gqUGt1-cs7Z1O0nnGBd66CguWNoBgqTKs4hx90n9RbaBYfowUi3lpaZSpNinyQuUXyWQFyKdhlit5QKIwNVjsOfGHdDSlO70~NdWD-6odGzjCeg40BCLsldA6AN2tiwqafxhpel4TgWa3b14o2KJGWtxkW5YW2fgywxWOhthrAb9YiA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                    src="https://s3-alpha-sig.figma.com/img/c2e3/892c/321c82d13193c79c322ef2abc34b00f2?Expires=1654473600&Signature=hDcUbDA7STKUtAx5IH8LX0N9iDne3Jqw5ykMbTwZiLyck6DtrLuwaeR25sEaVLDBm4TrUmjFs9wxoHICPhn4vVMXyE4tRVBDzdfvqKHaVDXT0PQdvQQBltobHVhlFue79ZmYL7IpgpNSzVslTCaT6s4jcDhe4kUk6l7R99atPv~fHu28dmwf-SZ-7AXAHUgAG57xqpz7jc-Q2tclU80Ly2cxas74EJR0PimrW-bLYR6ma6hnNmAPNHNWutoZ4codCMpFkpUK4w6SnLbbDiothyltKE-nkS8IKfgBVNxxBMenm~MjmuTSBbXO2IyqiQ6uEVmkWe1tqLJUedNM-MAI5w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
                 ></Box>
             </section>
         </article>
