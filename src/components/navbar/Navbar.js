@@ -1,55 +1,53 @@
 import React, { useState } from 'react';
 import logo from '../../assets/img/logo.png'
-import { AppBar, Button, Tabs, Tab, Box, Toolbar } from '@mui/material';
-import { IconoDiv, IconoImg } from '../navbar/styles/elementsNavbar'
+import { Barra } from '../navbar/styles/elementsNavbar'
 import { NavLink } from "react-router-dom"
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Button } from '@mui/material'
 
 const Navbar = () => {
-    const [login, setLogin] = useState(false)
+    const [user, setUser] = useState(false)
     return (<>
-        <AppBar sx={{ background: "red" }} position="sticky" >
-            <Toolbar>
-                <NavLink to="/">
-                    <IconoDiv>
-                        <IconoImg src={logo} alt="logo" />
-                    </IconoDiv>
+        <Barra>
+            <NavLink to="/">
+                <div className='icono_div'>
+                    <img className="icono_img" src={logo} alt="logo" />
+                </div>
+            </NavLink>
+            <ul className='container_options'>
+                <NavLink to="/search" style={{ textDecoration: 'none' }}><li className='options'>Search</li></NavLink>
+                <NavLink to="/ayuda" style={{ textDecoration: 'none' }}><li className='options'>Ayuda</li></NavLink> 
+                <NavLink to="/"style={{ textDecoration: 'none' }}><li className='options'>Quienes Somos</li></NavLink>
+            </ul>             
+            {
+                user ? 
+                <div className='container_buttons'>
+                <Button
+                 variant='contained'
+                 onClick={()=>setUser(!user)}
+                 className="buttons"
+                 >Logout
+                 </Button>
+                 </div>
+                :
+                 <div className='container_buttons'>
+                 <NavLink to="/register" style={{ textDecoration: 'none' }}>
+                 <Button variant='contained'
+                  className="buttons"
+                 >Registrarse</Button></NavLink>
+                 <NavLink to="/login"style={{ textDecoration: 'none' }}>
+                 <Button className="buttons"                 
+                  variant='contained'
+                  onClick={()=>setUser(!user)}
+                 >Acceder
+                </Button>
                 </NavLink>
-
-                {
-                    login ?
-                        <Tabs sx={{ marginLeft: "auto" }}
-                            textColor="inherit"
-                            display="flex"
-                        >
-                            <NavLink to="/" style={{ textDecoration: "none",color:"black" }}><Tab label="Search" /></NavLink>
-                            <NavLink to="/" style={{ textDecoration: "none",color:"black" }}><Tab label="Contactanos" /></NavLink>
-                            <NavLink to="/" style={{ textDecoration: "none",color:"black" }}><Tab label="Acerca de" /></NavLink>
-                        </Tabs>
-                        :
-                        ""
-                }
-                <Box sx={{ marginLeft: "auto" }}>
-                    {
-                        login ? <Button
-                            sx={{ marginLeft: "10px" }}
-                            variant="contained"
-                            onClick={() => setLogin(!login)}
-                        >Logout</Button>
-                            :
-                            <>
-                                <NavLink to="/register" style={{ textDecoration: "none" }} ><Button variant="contained" color="success" >Registrarse</Button></NavLink>
-                                <NavLink to="/login"style={{ textDecoration: "none" }}><Button
-                                    variant="contained"
-                                    color="success"
-                                    onClick={() => setLogin(!login)}>Login</Button></NavLink>
-                            </>
-
-                    }
-                </Box>
-            </Toolbar>
-        </AppBar>
+                </div>
+            }
+            <div className='burger'>
+                <GiHamburgerMenu className='burger_icon' />
+            </div>
+        </Barra>
     </>);
 }
-
-
 export default Navbar
