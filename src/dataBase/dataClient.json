@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "name": "Jaime Agudelo",
+            "idType": "cc",
+            "identification": "12344654",
+            "role": "client",
+            "address": "Mz 2 Casa 9 Halcones",
+            "city": "Bogotá",
+            "country": "Colombia"
+        },
+        {
+            "name": "Lacides Mobil",
+            "idType": "ti",
+            "identification": "325488574",
+            "role": "client",
+            "address": "Calle 11 # 23-12",
+            "city": "Buenos Aires",
+            "country": "Argentina"
+        }
+    ]
+}

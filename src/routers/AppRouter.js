@@ -14,11 +14,13 @@ const AppRouter = () => {
   return (
     <Router>
       <Navbar />
+      <UserList />
       <Routes>
         <Route path="/" index element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/ayuda" element={<HelpPage />} />
+        <Route path="/search" element={<HomePage />} />
         <Route path="*" element={<Error404Page />} />
       </Routes>
       <Footer />

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ROLES } from "../../models/roleModels";
 import { UserModel } from "../../models/UserClass";
 import UserPure from "../../pures/userPure/UserPure";
+import { getClient } from "../../services/getClient";
 
 const UserList = () => {
   const defaultUser = new UserModel(
