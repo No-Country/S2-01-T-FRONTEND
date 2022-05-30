@@ -1,13 +1,27 @@
-article {
+.article__help-page {
     background-color: var(--white);
     text-align: justify;
-}
 
-.MuiTypography-h4 {
-    padding: 10vh 30vw 0;
-}
+    .MuiTypography-h4 {
+        padding: 10vh 30vw 0;
+    }
 
-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    .section__help-page {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 5vh 5vw;
+    }
+
+    //media queries
+    @media screen and (max-width: 768px) {
+        .MuiTypography-h4 {
+            font-size: 1.2rem;
+        }
+        .MuiTypography-h5 {
+            font-size: 0.8rem;
+        }
+        .MuiTypography-body1 {
+            font-size: 0.5rem;
+        }
+    }
 }
