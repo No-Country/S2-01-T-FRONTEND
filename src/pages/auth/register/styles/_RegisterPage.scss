@@ -52,8 +52,9 @@
     justify-content: center;
 }
 
-.img-login {
-    max-width: toRem(200);
+.img-reg {
+    max-width: toRem(150);
+    max-height: toRem(150);
     padding-top: toRem(5);
 }
 
@@ -143,13 +144,12 @@
     }
 }
 
-.msg-error-email{
+.msg-error-email-reg{
     
     margin: toRem(5) 0 0 0;
     padding-left: toRem(10);
     text-align: left;
     font-size: toRem(12);
     color: var(--red);
-    display: none;
     
 }

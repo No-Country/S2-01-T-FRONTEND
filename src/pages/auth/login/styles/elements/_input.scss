@@ -5,7 +5,7 @@
     height: toRem(40);
     font-size: toRem(15);
     border-radius: 0.3125rem;
-    border: toRem(1.5) solid transparent;
+    border: toRem(2) solid var(--verde);
     padding: 0 toRem(40) 0 toRem(10);
 
     &:focus{

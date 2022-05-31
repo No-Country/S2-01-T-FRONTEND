@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import "./styleUserPure.scss";
+import "../../pages/auth/login/styles/_loginStyle.scss";
 import PropTypes from "prop-types";
 import { UserModel } from "../../models/UserClass";
-import { getClient } from "../../services/getClient";
 import logoUser from "../../assets/img/logo-user.png";
+import RatingStar from "../../components/rating/RatingStar";
 
 const UserPure = ({ user }) => {
   const urlDataClient = "/dataClient.json";
@@ -21,29 +21,27 @@ const UserPure = ({ user }) => {
   }, []);
 
   return (
-    <div className="container-card">
-      <h2>Nombre: {user.name}</h2>
-      {dataClient.map((emisora) => (
-        <div key={emisora.id}>
-          <p>{emisora.id}</p>
-          <p>{emisora.name}</p>
-          <p>{emisora.address}</p>
-          <p>{emisora.role}</p>
-        </div>
-      ))}
-
-      <div className="card-pres">
-        <div className="card-head">
-          <img src={logoUser} alt="" />
-        </div>
-        <div className="card-container">
-          <div className="info show">Jaime Agudelo</div>
-          <div className="info show">Bogotá, Colombia</div>
-          <div className="info show">Calificación:</div>
-          <div className="info show">Comentarios:</div>
-        </div>
+    <>
+      <div className="container-card">
+        {dataClient.map((emisora) => (
+          <div key={emisora.id}>
+            <div className="card-pres">
+              <div className="card-head">
+                <img src={logoUser} alt="" />
+              </div>
+              <div className="card-container">
+                <div className="info-1 show">{emisora.name}</div>
+                <div className="info-2 show">{emisora.address}</div>
+                <div className="info-3 show">{emisora.country}</div>
+                <div className="show">
+                  <RatingStar rating={emisora.rating} />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    </>
   );
 };
 
@@ -52,3 +50,29 @@ UserPure.propTypes = {
 };
 
 export default UserPure;
+
+/* 
+
+<div className="container-card">
+        {dataClient.map((emisora) => (
+        <div key={emisora.id}>
+          <p>{emisora.name}</p>
+          <p>{emisora.role}</p>
+        </div>
+      ))}
+
+        <div className="card-pres">
+          <div className="card-head">
+            <img src={logoUser} alt="" />
+          </div>
+          <div className="card-container">
+            <div className="info show">{emisora.name}</div>
+            <div className="info show">{emisora.address}</div>
+            <div className="show">
+              <RatingStar />
+            </div>
+          </div>
+        </div>
+      </div>
+
+*/
