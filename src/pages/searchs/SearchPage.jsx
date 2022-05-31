@@ -9,13 +9,12 @@ const Search = () => {
       <div className="head-search">
         <h1 className="title-search">Busca lo que necesites</h1>
         <div className="container-label-search">
-          <div className="search-label">
-            <p>Buscar</p> <SearchIcon />
-          </div>
-          <input className="input-login" type="text" />
+          <label className="lbl-search">Buscar</label>{" "}
+          <SearchIcon className="icon-search" />
+          <input className="input-search" type="text" />
         </div>
       </div>
-      <div className="div body-search">
+      <div className="body-search">
         <UserList />
       </div>
     </>

@@ -7,7 +7,7 @@ import Footer from "../components/footer/Footer";
 import Error404Page from "../pages/404/Error404Page";
 import RegisterPage from "../pages/auth/register/domain/RegisterPageValitate";
 import HelpPage from "../pages/help/HelpPage";
-import Search from "../pages/seachs/Search";
+import SearchPage from "../pages/searchs/SearchPage";
 import ContactPage from "../pages/contact/ContactPage";
 
 const AppRouter = () => {
@@ -20,7 +20,7 @@ const AppRouter = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/ayuda" element={<HelpPage />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Error404Page />} />
       </Routes>
