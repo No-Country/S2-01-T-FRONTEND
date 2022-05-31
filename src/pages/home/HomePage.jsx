@@ -7,9 +7,9 @@ import Newsletter from "../../components/main/Newsletter";
 const HomePage = () => {
   return (
     <SectionMain>
-      <CardsContainer/>
       <PrincipalSection/>
       <Newsletter/>      
+      <CardsContainer/>
     </SectionMain>
       
   );

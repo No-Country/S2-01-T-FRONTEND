@@ -17,7 +17,7 @@ function Newsletter() {
                  </Container>
                 <Button size="small" color="warning" variant="contained" className="enterBtn" >Enter</Button>
             </Container>
-            <img src={test}/>
+            <img src={test} alt="Imagen de contacto"/>
 
 
         </StyledNewsletter>

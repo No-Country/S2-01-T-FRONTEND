@@ -45,7 +45,7 @@ const Navbar = () => {
                 </div>
             }
             <div className='burger'>
-                <GiHamburgerMenu className='burger_icon' />
+                { <GiHamburgerMenu className='burger_icon' /> }
             </div>
         </Barra>
     </>);
