@@ -17,7 +17,6 @@ const UserList = () => {
 
   return (
     <div>
-      <h1>Listado de Clientes</h1>
       <UserPure user={defaultUser} />
     </div>
   );

@@ -50,7 +50,7 @@ const RegisterPage = () => {
 
           <div className="container-title">
             <h1 className="title-in">
-              <DoubleArrowIcon className="icon-login" /> Registrarme - Validate
+              <DoubleArrowIcon className="icon-login" /> Registrarme
             </h1>
           </div>
           <div className="container-title separator">
@@ -290,18 +290,6 @@ const RegisterPage = () => {
               )}
             </form>
           </div>
-
-          {client.role && (
-            <div className="forgot-login">
-              {/*<label type="button" onClick={hanldlePass} className="forgot-pass">
-            Olvide mi contraseña
-            </label>*/}
-              <Link className="forgot-pass" to="/addData">
-                Olvide mi contraseña
-              </Link>
-              <hr className="div-forget" />
-            </div>
-          )}
         </div>
       </div>
     </>

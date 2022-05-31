@@ -1,0 +1,14 @@
+.head-search{
+    @include exo-font;
+    width: 60%;
+    margin: toRem(20) auto;
+
+    & .title-search{
+        text-align: center;
+    }
+
+    & .container-label-search{
+        display: flex;
+        
+    }
+}
