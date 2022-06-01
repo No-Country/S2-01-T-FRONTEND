@@ -7,16 +7,17 @@ import TiendaPagos from "../../assets/img/tienda-pagos.png"
 import Container from '@mui/material/Container';
 
 function PrincipalSection() {
+    
     return (
         <PrincipalSectionStyled>
-
+            
             <Container className="leftContainer">
                 <Container className="titleAndParagraph">
                     <h2>elFiado.com</h2>
                     <p>Conocé mas acerca del comportamiento crediticio <br></br>de tus clientes y viceversa</p>
                 </Container>
                 <Container className="registerAndHome">
-                    <Button color="warning" variant="contained" className="registerBtn">Registrate! </Button>
+                    <Button color="warning" variant="contained" className="registerBtn" href="/register">Registrate! </Button>
                     <img src={Logo} alt="LogoIcon" />
                 </Container>
             </Container>
@@ -42,7 +43,14 @@ const PrincipalSectionStyled = styled.div`
         flex-direction:column;
         width:50%;
         margin-left:auto;
+        margin-right:auto;
     }  
+
+    .registerBtn{
+        width:70%;
+        margin-left:auto;
+        margin-right:auto;
+    }
 
     .tiendaPagosImg{
         width:45%;

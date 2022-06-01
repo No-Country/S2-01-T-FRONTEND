@@ -18,7 +18,7 @@ function CardsContainer() {
         <StyledCardsContainer>
             <Grid container>
                 <Grid item md={4} xs={12} className="gridItem">
-                    <Card variant="outlined" className="card xs" >
+                    <Card variant="outlined" className="card" >
                         <CardMedia
                             component="img"
                             alt="Logo"
@@ -45,13 +45,12 @@ function CardsContainer() {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item md={4} sm={6} className="gridItem">
+                <Grid item md={4} xs={12} className="gridItem">
                     <Card variant="outlined" className="card" >
                         <CardMedia
                             component="img"
                             alt="Logo"
-
-                            image={experience}
+                            image={sale}
                         />
                         <CardContent>
                             <h4>Experience</h4>
@@ -94,7 +93,7 @@ const StyledCardsContainer = styled.div`
         align-items:center;
         justify-content:center;  
         margin-top:1em;
-        width:40%;
+        width:75%;
         background-color:#EED9C7;
         border-radius:2em;
         box-shadow: rgba(0, 0, 0, 0.15) 3.2px 2px 5px;
