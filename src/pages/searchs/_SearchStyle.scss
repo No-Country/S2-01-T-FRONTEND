@@ -5,11 +5,17 @@
 
     & .title-search{
         text-align: center;
+        font-size: toRem(22);
+    }
+
+    & .container-lbl-s{
+        display: flex;
+        flex-direction: row;
     }
 
     & .container-label-search{
         border-radius: toRem(5);
-        border: toRem(3) solid var(--verde);
+        border: toRem(2) solid var(--verde);
         display: flex;
         flex-direction: row;
 
@@ -61,5 +67,6 @@
 }
 
 .body-search{
+    padding-top: toRem(30);
     padding-bottom: toRem(50);
 }

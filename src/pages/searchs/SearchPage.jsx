@@ -7,10 +7,12 @@ const Search = () => {
   return (
     <>
       <div className="head-search">
-        <h1 className="title-search">Busca lo que necesites</h1>
+        <h1 className="title-search">Busca lo que necesites...</h1>
         <div className="container-label-search">
-          <label className="lbl-search">Buscar</label>{" "}
-          <SearchIcon className="icon-search" />
+          <div className="container-lbl-s">
+            <label className="lbl-search">Buscar</label>{" "}
+            <SearchIcon className="icon-search" />
+          </div>
           <input className="input-search" type="text" />
         </div>
       </div>

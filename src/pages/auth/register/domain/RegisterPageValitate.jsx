@@ -1,39 +1,38 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "../../login/styles/_loginStyle.scss";
 import logoFiado from "../../../../assets/img/logo-pagos.png";
 import logoClient from "../../../../assets/img/logo-user.png";
-
 import { countrys } from "../../../../models/Coutries";
-
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import { useForm } from "react-hook-form";
-
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
-
 import { EXPRESIONES } from "../../../../models/ExpRegulares";
-
 import { ROLES } from "../../../../models/roleModels";
 
 const RegisterPage = () => {
   // ----------------------- Variables de estados -----------------------------
-  const [client, setClient] = useState({ role: "" });
+  const [client, setClient] = useState({});
 
   // --------------------------------------------------------------------------
 
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm();
 
   const handleInput = (event) => {
-    setClient({ ...client, [event.target.name]: event.target.value });
+    //setClient({ ...client, [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+    setClient((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const onSubmit = (e) => {
-    console.log(e);
-    setClient([""]);
+    setClient(e);
   };
 
   return (
@@ -43,7 +42,7 @@ const RegisterPage = () => {
           <div className="container-img">
             <img
               className="img-reg"
-              src={client.role === "Client" ? logoClient : logoFiado}
+              src={watch("role") === "Client" ? logoClient : logoFiado}
               alt="logo-imve"
             />
           </div>
@@ -66,13 +65,23 @@ const RegisterPage = () => {
                 id="role"
                 name="role"
                 onChange={handleInput}
+                {...register("role", {
+                  required: {
+                    value: true,
+                    message: "El campo es requerido",
+                  },
+                  pattern: {
+                    value: EXPRESIONES.NAME,
+                    message: "El formato del nombre no es correcto",
+                  },
+                })}
               >
                 <option value="">Seleccione un Rol</option>
                 <option value={ROLES.SHOP}>Comercio</option>
                 <option value={ROLES.CLIENT}>Cliente</option>
               </select>
 
-              {client.role === "" ? (
+              {!watch("role") ? (
                 <div className="error-login">
                   <p className="text-error">
                     <b>Nota: </b> Por favor elija un rol para diligenciar el
@@ -84,7 +93,7 @@ const RegisterPage = () => {
                   {/* ------------------------ Inicio de los input ---------------------------*/}
 
                   <label htmlFor="user" className="label-login">
-                    {client.role === "Client"
+                    {watch("role") === "Client"
                       ? "Nombre Completo"
                       : "Razón Social"}
                   </label>
@@ -117,8 +126,8 @@ const RegisterPage = () => {
                   </label>
                   <div className="group-input">
                     <input
-                      id="ident"
-                      name="ident"
+                      id="dni"
+                      name="dni"
                       type="text"
                       placeholder="Ingrese identificación"
                       className="input-login"
@@ -140,10 +149,8 @@ const RegisterPage = () => {
                       })}
                     />
                   </div>
-                  {errors.ident && (
-                    <p className="msg-error-email-reg">
-                      {errors.ident.message}
-                    </p>
+                  {errors.dni && (
+                    <p className="msg-error-email-reg">{errors.dni.message}</p>
                   )}
 
                   <label htmlFor="user" className="label-login">
@@ -151,7 +158,7 @@ const RegisterPage = () => {
                   </label>
                   <div className="group-input">
                     <input
-                      id="user"
+                      id="email"
                       name="email"
                       type="email"
                       placeholder="ejemplo@miemail.com"
@@ -161,7 +168,6 @@ const RegisterPage = () => {
                         required: {
                           value: true,
                           message: "El campo es requerido",
-                          valido: true,
                         },
                         pattern: {
                           value: EXPRESIONES.EMAIL,
@@ -173,6 +179,36 @@ const RegisterPage = () => {
                   {errors.email && (
                     <p className="msg-error-email-reg">
                       {errors.email.message}
+                    </p>
+                  )}
+
+                  <label htmlFor="user" className="label-login">
+                    Número de Contacto
+                  </label>
+                  <div className="group-input">
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="text"
+                      placeholder="xxx-xxx-xxxx"
+                      className="input-login"
+                      onChange={handleInput}
+                      {...register("phone", {
+                        required: {
+                          value: true,
+                          message: "El campo es requerido",
+                        },
+                        pattern: {
+                          value: EXPRESIONES.PHONE,
+                          message:
+                            "El formato del número telefónico no es correcto",
+                        },
+                      })}
+                    />
+                  </div>
+                  {errors.phone && (
+                    <p className="msg-error-email-reg">
+                      {errors.phone.message}
                     </p>
                   )}
 
@@ -281,7 +317,7 @@ const RegisterPage = () => {
                 </div>
               )}
 
-              {client.role && (
+              {watch("role") && (
                 <div className="container-input">
                   <button className="signin-btn" type="submit">
                     <div className="ingresar">Ingresar</div>
