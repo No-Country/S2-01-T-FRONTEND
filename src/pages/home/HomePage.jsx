@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+
 import PrincipalSection from "../../components/main/PrincipalSection";
 
 
 const HomePage = () => {
   return (
     <SectionMain>
-      <PrincipalSection/>     
+      <PrincipalSection/>
+     
     </SectionMain>
       
   );
