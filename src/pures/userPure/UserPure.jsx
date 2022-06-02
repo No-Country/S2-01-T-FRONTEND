@@ -6,35 +6,56 @@ import { UserModel } from "../../models/UserClass";
 import logoUser from "../../assets/img/logo-user.png";
 import RatingStar from "../../components/rating/RatingStar";
 
-const UserPure = ({ user }) => {
+const UserPure = ({ buscar }) => {
+  /*
   const urlDataClient = "/dataClient.json";
   const [dataClient, setDataClient] = useState([]);
+  const [dataCard, setDataCard] = useState([]);
 
-  useEffect(() => {
+  const getClient = async () => {
     try {
-      fetch(urlDataClient)
+      await fetch(urlDataClient)
         .then((data) => data.json())
-        .then((dataClien) => setDataClient(dataClien));
+        .then((clientes) => {
+          setDataClient(clientes);
+          setDataCard(clientes);
+        });
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  };
 
+  const filterClient = (aBuscar = "jai") => {
+    const resultFilter = dataCard.filter((element) => {
+      if (
+        element.name.toString().toLowerCase().includes(aBuscar.toLowerCase()) ||
+        element.country.toString().toLowerCase().includes(aBuscar.toLowerCase())
+      ) {
+        return element;
+      }
+    });
+    setDataClient(resultFilter);
+  };
+
+  useEffect(() => {
+    getClient();
+  }, []);
+*/
   return (
     <>
       <div className="container-card">
-        {dataClient.map((emisora) => (
-          <div key={emisora.id}>
+        {buscar.map((cliente) => (
+          <div key={cliente.id}>
             <div className="card-pres">
               <div className="card-head">
                 <img src={logoUser} alt="" />
               </div>
               <div className="card-container">
-                <div className="info-1 show">{emisora.name}</div>
-                <div className="info-2 show">{emisora.address}</div>
-                <div className="info-3 show">{emisora.country}</div>
+                <div className="info-1 ">{cliente.name}</div>
+                <div className="info-2 show">{cliente.address}</div>
+                <div className="info-3 show">{cliente.country}</div>
                 <div className="show">
-                  <RatingStar rating={emisora.rating} />
+                  <RatingStar rating={cliente.rating} />
                 </div>
               </div>
             </div>

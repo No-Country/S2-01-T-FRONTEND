@@ -3,7 +3,7 @@ import { ROLES } from "../../models/roleModels";
 import { UserModel } from "../../models/UserClass";
 import UserPure from "../../pures/userPure/UserPure";
 
-const UserList = () => {
+const UserList = ({ buscar }) => {
   const defaultUser = new UserModel(
     "Jaime",
     "CC",
@@ -16,7 +16,7 @@ const UserList = () => {
 
   return (
     <div>
-      <UserPure user={defaultUser} />
+      <UserPure user={defaultUser} buscar={buscar} />
     </div>
   );
 };

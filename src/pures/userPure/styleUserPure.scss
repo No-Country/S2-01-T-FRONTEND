@@ -6,12 +6,58 @@
     gap: 10px;
     margin: auto;
     justify-items: center;
-    align-items: center;
 }
 
+@media (max-width: 1400px) {
+    .container-card{
+
+        display: grid;
+        transition: all 0.5s ease;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+    }
+}
+
+@media (max-width: 1010px) {
+    .container-card{
+
+        display: grid;
+        transition: all 0.5s ease;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .container-card{
+
+        display: grid;
+        transition: all 0.5s ease;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+}
+
+
+@media (max-width: 540px) {
+    .container-card{
+
+        display: grid;
+        transition: all 0.5s ease;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    }
+
+    .card-pres{
+        width: toRem(300);
+    }
+}
+
+
 .card-pres{
-    height: 175px;
-    width: 200px;
+    height: toRem(180);
+    width: toRem(200);
     overflow: hidden;
     margin: auto;
     padding: 10px 30px;
