@@ -17,7 +17,9 @@ const Navbar = () => {
             <ul className='container_options'>
                 <NavLink to="/search" style={{ textDecoration: 'none' }}><li className='options'>Search</li></NavLink>
                 <NavLink to="/ayuda" style={{ textDecoration: 'none' }}><li className='options'>Ayuda</li></NavLink> 
-                <NavLink to="/"style={{ textDecoration: 'none' }}><li className='options'>Quienes Somos</li></NavLink>
+                <NavLink to="/contact"style={{ textDecoration: 'none' }}><li className='options'>Contacto</li></NavLink>
+                <NavLink to="/about"style={{ textDecoration: 'none' }}><li className='options'>Quienes Somos</li></NavLink>
+                
             </ul>             
             {
                 user ? 
