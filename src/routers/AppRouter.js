@@ -9,6 +9,7 @@ import RegisterPage from "../pages/auth/register/domain/RegisterPageValitate";
 import HelpPage from "../pages/help/HelpPage";
 import SearchPage from "../pages/searchs/SearchPage";
 import ContactPage from "../pages/contact/ContactPage";
+import AboutMePage from "../pages/aboutMe/AboutMePage";
 
 const AppRouter = () => {
   return (
@@ -21,6 +22,7 @@ const AppRouter = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/ayuda" element={<HelpPage />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/about" element={<AboutMePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Error404Page />} />
       </Routes>
