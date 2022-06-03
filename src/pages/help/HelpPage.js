@@ -8,7 +8,7 @@ import imgTiendaPagos from "../../assets/img/tienda-pagos.png";
 const HelpPage = () => {
     return (
         <article className="article__help-page">
-            <Typography variant="h4" sx={{ fontWeight: 'bold', textAlign: 'center' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Typography>
+            <Typography variant="h4" sx={{ fontWeight: 'bold', textAlign: 'center' }}>Tus primeros pasos en elFiadoYa.com</Typography>
             <section className="section__help-page">
                 <Box component="div"
                     sx={{
@@ -21,12 +21,12 @@ const HelpPage = () => {
                         sx={{
                             fontWeight: 'bold',
                             width: 1/2
-                        }}>1.- Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        }}>1.- ¿Cómo funciona?
                     </Typography>
                     <Typography variant="body1"
                         sx={{
                             width: 1/2
-                        }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere quam in justo tristique efficitur.
+                        }}>Creá tu cuenta llenando el formulario en línea. Al estar registrado como comercio, podrás comenzar a agregar fiados realizados. Si te registrás como cliente, podrás ver los puntos afiliados.
                     </Typography>
                 </Box>
                 <Box component="div" sx={{ textAlign: 'center'}}>
@@ -64,12 +64,12 @@ const HelpPage = () => {
                         sx={{
                             fontWeight: 'bold',
                             width: 1/2
-                        }}>1.- Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        }}>2.- ¿Cómo agrego una operación de fiado?
                     </Typography>
                     <Typography variant="body1"
                         sx={{
                             width: 1/2
-                        }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere quam in justo tristique efficitur.
+                        }}>Desde la página de búsqueda podrás encontrar a tu cliente por DNI y asignarle un monto de fiado. Como cliente podrás aceptar la operación.
                     </Typography>
                 </Box>
             </section>
@@ -86,12 +86,12 @@ const HelpPage = () => {
                         sx={{
                             fontWeight: 'bold',
                             width: 1/2
-                        }}>3.- Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        }}>3.- ¿Cómo veo las deudas que debo o tengo a favor?
                     </Typography>
                     <Typography variant="body1"
                         sx={{
                             width: 1/2
-                        }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere quam in justo tristique efficitur.
+                        }}>Desde la sección "Mis Fiados" podrás ver tanto las deudas actuales como las que ya fueron saldadas.
                     </Typography>
                 </Box>
                 <Box component="div" sx={{ textAlign: 'center'}}>
@@ -129,12 +129,12 @@ const HelpPage = () => {
                         sx={{
                             fontWeight: 'bold',
                             width: 1/2
-                        }}>4.- Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        }}>4.- ¿Qué pasa si se incumple algún pago?
                     </Typography>
                     <Typography variant="body1"
                         sx={{
                             width: 1/2
-                        }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere quam in justo tristique efficitur.
+                        }}>Al saldar una deuda, el sistema actualizará tu calificación de manera positiva, no hacerlo reducirá tu calificación y corrés riesgo de ser limitado o suspendido para futuras operaciones.
                     </Typography>
                 </Box>
             </section>
