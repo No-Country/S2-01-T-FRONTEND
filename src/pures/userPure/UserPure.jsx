@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import "../../pages/auth/login/styles/_loginStyle.scss";
-import PropTypes from "prop-types";
-import { UserModel } from "../../models/UserClass";
 import logoUser from "../../assets/img/logo-user.png";
 import RatingStar from "../../components/rating/RatingStar";
 

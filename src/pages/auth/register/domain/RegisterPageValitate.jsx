@@ -8,12 +8,14 @@ import { useForm } from "react-hook-form";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 import { EXPRESIONES } from "../../../../models/ExpRegulares";
 import { ROLES } from "../../../../models/roleModels";
+import axios from "axios";
 
 const RegisterPage = () => {
   // ----------------------- Variables de estados -----------------------------
   const [client, setClient] = useState({});
 
   // --------------------------------------------------------------------------
+  const urlPost = "https://fiadosya.herokuapp.com/auth/register";
 
   const {
     register,
@@ -33,6 +35,16 @@ const RegisterPage = () => {
 
   const onSubmit = (e) => {
     setClient(e);
+    //postRegister();
+  };
+  console.log(client);
+
+  const postRegister = async () => {
+    await axios.post({
+      url: urlPost,
+      method: "POST",
+      data: client,
+    });
   };
 
   return (
@@ -92,10 +104,41 @@ const RegisterPage = () => {
                 <div>
                   {/* ------------------------ Inicio de los input ---------------------------*/}
 
+                  {watch("role") === "Shop" && (
+                    <>
+                      <label htmlFor="user" className="label-login">
+                        Razón Social
+                      </label>
+                      <div className="group-input">
+                        <input
+                          id="razonSocial"
+                          name="razonSocial"
+                          type="text"
+                          placeholder="Ingrese Nombre de la Tienda"
+                          className="input-login"
+                          onChange={handleInput}
+                          {...register("razonSocial", {
+                            required: {
+                              value: true,
+                              message: "El campo es requerido",
+                            },
+                            pattern: {
+                              value: EXPRESIONES.ADDRESS,
+                              message: "El formato no es correcto",
+                            },
+                          })}
+                        />
+                      </div>
+                      {errors.razonSocial && (
+                        <p className="msg-error-email-reg">
+                          {errors.razonSocial.message}
+                        </p>
+                      )}
+                    </>
+                  )}
+
                   <label htmlFor="user" className="label-login">
-                    {watch("role") === "Client"
-                      ? "Nombre Completo"
-                      : "Razón Social"}
+                    Nombre
                   </label>
                   <div className="group-input">
                     <input
@@ -122,6 +165,35 @@ const RegisterPage = () => {
                   )}
 
                   <label htmlFor="user" className="label-login">
+                    Apellido
+                  </label>
+                  <div className="group-input">
+                    <input
+                      id="lastName"
+                      name="lastName"
+                      type="text"
+                      placeholder="Ingrese Apellido"
+                      className="input-login"
+                      onChange={handleInput}
+                      {...register("lastName", {
+                        required: {
+                          value: true,
+                          message: "El campo es requerido",
+                        },
+                        pattern: {
+                          value: EXPRESIONES.NAME,
+                          message: "El formato del Apellido no es correcto",
+                        },
+                      })}
+                    />
+                  </div>
+                  {errors.lastName && (
+                    <p className="msg-error-email-reg">
+                      {errors.lastName.message}
+                    </p>
+                  )}
+
+                  <label htmlFor="user" className="label-login">
                     Identificación
                   </label>
                   <div className="group-input">
@@ -132,7 +204,7 @@ const RegisterPage = () => {
                       placeholder="Ingrese identificación"
                       className="input-login"
                       onChange={handleInput}
-                      {...register("ident", {
+                      {...register("dni", {
                         required: {
                           value: true,
                           message: "El campo es requerido",
@@ -275,6 +347,32 @@ const RegisterPage = () => {
                     </p>
                   )}
 
+                  <label className="label-login">Ciudad</label>
+                  <div className="group-input">
+                    <input
+                      id="city"
+                      name="city"
+                      type="text"
+                      placeholder="Ingresa una Ciudad"
+                      className="input-login"
+                      onChange={handleInput}
+                      {...register("city", {
+                        required: {
+                          value: true,
+                          message: "El campo es requerido",
+                        },
+
+                        pattern: {
+                          value: EXPRESIONES.ADDRESS,
+                          message: "El formato no es valido",
+                        },
+                      })}
+                    />
+                  </div>
+                  {errors.city && (
+                    <p className="msg-error-email-reg">{errors.city.message}</p>
+                  )}
+
                   <div>
                     <label className="label-login">Pais</label>
                     <select
@@ -320,7 +418,7 @@ const RegisterPage = () => {
               {watch("role") && (
                 <div className="container-input">
                   <button className="signin-btn" type="submit">
-                    <div className="ingresar">Ingresar</div>
+                    <div className="ingresar">Registrarme</div>
                   </button>
                 </div>
               )}

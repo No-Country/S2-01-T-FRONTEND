@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/_loginStyle.scss";
 import axios from "axios";
 import logoFiado from "../../../../assets/img/el-fiado.png";
+import { EXPRESIONES } from "../../../../models/ExpRegulares";
 
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 
@@ -13,45 +14,32 @@ const LoginPage = () => {
   // ----------------------- Variables de estados -----------------------------
   const [user, setUser] = useState({ campo: "", valido: null });
   const [pass, setPass] = useState({ campo: "", valido: null });
+  const [dataImport, setDataImport] = useState([]);
 
   // --------------------------------------------------------------------------
-
-  const refElement = useRef();
 
   //   const handleInput = (event) => {
   //     setDataUser({ ...dataUser, [event.target.name]: event.target.value });
   //   };
-  const urlLogin = "https://fiadosya.herokuapp.com/";
+  const urlLogin = "https://fiadosya.herokuapp.com/auth/login";
   const handleSetData = () => {
-    axios.post(urlLogin + "auth/login");
+    addObject();
+    axios.post(urlLogin, dataImport).then((data) => console.log(data));
+    setPass({ campo: "", valido: null });
+    setUser({ campo: "", valido: null });
   };
 
-  // const userProps = {
-  //   label: "Usuarios",
-  //   name: "name",
-  //   id: "name",
-  //   placeHold: "ejemplo@email.com",
-  //   type: "email",
-  //   msgError: "Ingrese un correo valido",
-  //   estado: { user },
-  //   setEstado: { setUser },
-  // };
-
-  const expresiones = {
-    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    password: /^[a-zA-Z0-9\_\-.]{6,12}$/, // 6 a 12 digitos.
-    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    telefono: /^\d{7,14}$/, // 7 a 14 numeros.
-  };
-
-  const handleInput = (event) => {
-    setUser({ ...user, [event.target.name]: event.target.value });
+  const addObject = () => {
+    const envio = {
+      email: user.campo,
+      password: pass.campo,
+    };
+    setDataImport(envio);
   };
 
   return (
     <>
-      <div ref={refElement} className="container">
+      <div className="container">
         <div className="contenedor">
           <div className="container-img">
             <img className="img-login" src={logoFiado} alt="logo-imve" />
@@ -76,7 +64,7 @@ const LoginPage = () => {
                 placeHold="ejemplo@email.com"
                 type="email"
                 msgError="Ingrese un correo valido"
-                expresionRegular={expresiones.correo}
+                expresionRegular={EXPRESIONES.EMAIL}
                 estado={user}
                 setEstado={setUser}
               />
@@ -88,7 +76,7 @@ const LoginPage = () => {
                 placeHold="Ingrese contraseña"
                 type="password"
                 msgError="Ingrese una constraseña valida"
-                expresionRegular={expresiones.password}
+                expresionRegular={EXPRESIONES.PASSWORD}
                 estado={pass}
                 setEstado={setPass}
               />
@@ -109,7 +97,9 @@ const LoginPage = () => {
                 <button
                   className="signin-btn"
                   type="button"
-                  onClick={handleSetData}
+                  onClick={() => {
+                    handleSetData();
+                  }}
                 >
                   <div className="ingresar">Ingresar</div>
                 </button>
