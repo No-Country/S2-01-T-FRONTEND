@@ -28,6 +28,7 @@ const Search = () => {
   };
 
   useEffect(() => {
+    document.title = "elFiado.com | Buscar";
     async function load() {
       const response = await getClient();
       setDataCard(response);

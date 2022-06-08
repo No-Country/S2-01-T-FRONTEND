@@ -10,6 +10,7 @@ import HelpPage from "../pages/help/HelpPage";
 import SearchPage from "../pages/searchs/SearchPage";
 import ContactPage from "../pages/contact/ContactPage";
 import AboutMePage from "../pages/aboutMe/AboutMePage";
+import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
   return (
@@ -18,10 +19,10 @@ const AppRouter = () => {
 
       <Routes>
         <Route path="/" index element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route exact path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/ayuda" element={<HelpPage />} />
-        <Route path="/search" element={<SearchPage />} />
+        <Route exact path="/search" element={<SearchPage />} />
         <Route path="/about" element={<AboutMePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Error404Page />} />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/_loginStyle.scss";
 import axios from "axios";
@@ -36,6 +36,10 @@ const LoginPage = () => {
     };
     setDataImport(envio);
   };
+
+  useEffect(() => {
+    document.title = "elFiado.com | Login";
+  }, []);
 
   return (
     <>

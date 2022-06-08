@@ -9,7 +9,7 @@
     padding: 0 toRem(40) 0 toRem(10);
 
     &:focus{
-        border: toRem(2) solid var(--orange);
+        border: toRem(2) solid var(--red);
         outline: none;
         box-shadow: toRem(3) 0 toRem(30) rgba(163,163,163, 0.6);
     }

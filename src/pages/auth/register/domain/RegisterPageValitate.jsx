@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../login/styles/_loginStyle.scss";
 import logoFiado from "../../../../assets/img/logo-pagos.png";
 import logoClient from "../../../../assets/img/logo-user.png";
@@ -46,6 +46,10 @@ const RegisterPage = () => {
       data: client,
     });
   };
+
+  useEffect(() => {
+    document.title = "elFiado.com | Registrar";
+  }, []);
 
   return (
     <>
