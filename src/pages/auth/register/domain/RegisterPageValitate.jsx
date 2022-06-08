@@ -64,11 +64,6 @@ const RegisterPage = () => {
               <DoubleArrowIcon className="icon-login" /> Registrarme
             </h1>
           </div>
-          <div className="container-title separator">
-            <hr />
-            <h1 className="title-login">Bienvenido</h1>
-            <hr className="divisor" />
-          </div>
           <div className="container-input">
             <form onSubmit={handleSubmit(onSubmit)}>
               <label className="label-login">Actividad Económica</label>

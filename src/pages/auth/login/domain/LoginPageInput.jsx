@@ -114,7 +114,6 @@ const LoginPage = () => {
             <Link className="forgot-pass" to="/addData">
               Olvide mi contraseña
             </Link>
-            <hr className="div-forget" />
           </div>
         </div>
       </div>

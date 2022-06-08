@@ -29,8 +29,8 @@
 
     & hr {
         flex: 1;
-        background: var(--verde);
-        border: 0.125rem solid var(--verde);
+        background: var(--red);
+        border: 0.125rem solid var(--red);
         ;
 
     }
@@ -137,8 +137,10 @@
         font-size: toRem(13);
         padding: toRem(5);
         font-weight: 400;
+        color: white;
     }
     & .icon-error{
+        color: white;
         line-height: toRem(20);
         font-size: toRem(16);
     }

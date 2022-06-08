@@ -6,7 +6,7 @@
     margin-top: toRem(35);
     margin-bottom: toRem(10);
     border-radius: 0.3125rem;
-    background: var(--verde);
+    background: var(--negroAzabache);
 
     border: none;
     height: 2.5rem;
@@ -18,7 +18,7 @@
 
     &:hover {
         cursor: pointer;
-        background: var(--verde);
+        background: var(--negroAzabache);
         transform: scale(0.98);
         box-shadow: toRem(5) 0px toRem(30) rgb(121, 119, 119)
         
