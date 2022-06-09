@@ -4,20 +4,32 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import test from '../../assets/img/test.svg';
 
+import Grid from '@mui/material/Grid';
+
 
 function Contacto() {
     return (
 
         <StyledContacto>
-            <Container maxWidth="sm" className="contactoBox">
-                <h2>Contacto</h2>
+
+        <Grid container className="gridCtn" >
+
+        <Grid item xs={12} sm={6} md={4}   className="contactoBox">
+            <h2>Contacto</h2>
                 <Container className="contacto">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere quam in justo tristique efficitur.</p>
-                    <input type='email' placeholder='Enter your email' className="mailInput"></input>
+                    <p>Suscríbete para mantenerte informado de nuestras novedades, tanto para clientes, como para comerciantes</p>
+                    <input type='email' placeholder='Introduce tu email' className="mailInput"></input>
                  </Container>
-                <Button size="small" color="warning" variant="contained" >Enter</Button>
-            </Container>            
-            <img src={test} className="imgContacto" alt="Imagen de contacto"/>
+            <Button size="small" color="warning" variant="contained" className="enterBtn">Enter</Button>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={6}  className="imgCtn">
+         <img src={test}  alt="Imagen de contacto" className="contactoImg"/>
+        </Grid>
+
+
+        </Grid>       
+            
         </StyledContacto>
 
     )
@@ -28,40 +40,42 @@ function Contacto() {
 const StyledContacto = styled.div`
 
     display:flex;
-    
-    align-items:center;
+    justify-content:space-around;
+  
 
-    flex-wrap:wrap;
-
-    justify-content:center;
-    
+    .gridCtn{
+      display:flex;
+      justify-content:space-around;
+      align-items:center;
+    }
+   
 
     .contactoBox{
         display:flex;
         flex-direction:column;
-        align-items:center;
-        width:45%;
-    }    
+        align-items:center;        
+    }  
 
-    .imgContacto{
-        margin:1.5em;
-        width:50%;
-    }
 
-    h2{
-        text-align:center;
-        margin-bottom:0.5%;
+    .imgCtn{
+        margin-top:1em;
+        display:flex;
+        justify-content:center;
+        margin-left:4em;
     }
+   
+   
+
+    
     input{
         border-radius:10em;
         align-self:center;
-        width:60%;
+        width:70%;
         text-align:center;
         background-color: #F1ECE7;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         margin-bottom:1em;
-        min-width:50%;
-        
+        min-width:50%;       
         
     }
 
@@ -69,7 +83,7 @@ const StyledContacto = styled.div`
         display:flex;
         flex-direction:column;
 
-
+    }
     
 
         
