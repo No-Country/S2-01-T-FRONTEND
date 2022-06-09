@@ -144,7 +144,7 @@ const RegisterPage = () => {
                       id="name"
                       name="name"
                       type="text"
-                      placeholder="Nombre y Apellido"
+                      placeholder="Ingrese un Nombre"
                       className="input-login"
                       onChange={handleInput}
                       {...register("name", {

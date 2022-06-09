@@ -1,8 +1,8 @@
 .input-login{
     @include exo-font;
     line-height: toRem(40); // EL texto siempre este en el centro del mismo alto del input
-    width: 100%;
-    height: toRem(40);
+    width: toRem(var(--widthCont));
+    height: toRem(35);
     font-size: toRem(15);
     border-radius: 0.3125rem;
     border: toRem(2) solid var(--negroAzabache);
@@ -54,3 +54,4 @@
     position: relative;
     z-index: 90;
 }
+

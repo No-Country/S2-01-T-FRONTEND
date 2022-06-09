@@ -1,7 +1,7 @@
 .container-card{
     @include exo-font;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     width: 90%;
     gap: 10px;
     margin: auto;
@@ -13,12 +13,33 @@
 
         display: grid;
         transition: all 0.5s ease;
+        grid-template-columns: repeat(6, 1fr);
+        justify-items: center;
+    }
+}
+
+@media (max-width: 1130px) {
+    .container-card{
+
+        display: grid;
+        transition: all 0.5s ease;
+        grid-template-columns: repeat(5, 1fr);
+        justify-items: center;
+    }
+}
+
+
+@media (max-width: 915px) {
+    .container-card{
+
+        display: grid;
+        transition: all 0.5s ease;
         grid-template-columns: repeat(4, 1fr);
         justify-items: center;
     }
 }
 
-@media (max-width: 1010px) {
+@media (max-width: 770px) {
     .container-card{
 
         display: grid;
@@ -28,8 +49,7 @@
     }
 }
 
-
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .container-card{
 
         display: grid;
@@ -40,12 +60,13 @@
 }
 
 
-@media (max-width: 540px) {
+
+@media (max-width: 510px) {
     .container-card{
 
         display: grid;
         transition: all 0.5s ease;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         justify-items: center;
     }
 
@@ -56,20 +77,20 @@
 
 
 .card-pres{
-    height: toRem(180);
-    width: toRem(200);
+    height: toRem(178);
+    width: toRem(140);
     overflow: hidden;
     margin: auto;
-    padding: 10px 30px;
+    padding: 10px 25px;
     border-radius: 3px;
     border: 1px solid white;
     transition: all .4s ease-in-out;
     box-shadow: 0px 1px 5px 0px rgba($color: #000000, $alpha: 0.3);
     text-align: center;
     background: rgb(133,7,81);
-background: linear-gradient(90deg, rgba(133,7,81,1) 0%, rgba(213,7,13,1) 100%, rgba(255,148,0,1) 100%);
+    background: linear-gradient(90deg, rgba(133,7,81,1) 0%, rgba(213,7,13,1) 100%, rgba(255,148,0,1) 100%);
     color: white;
-    font-size: 14px;
+    font-size: toRem(10);
 
     &:hover{
         height: 320px;
@@ -83,8 +104,8 @@ background: linear-gradient(90deg, rgba(133,7,81,1) 0%, rgba(213,7,13,1) 100%, r
         position: relative;
         border-radius: 50%;
         display: block;
-        height: 120px;
-        width: 120px;
+        height: 110px;
+        width: 110px;
         border: 1px solid white;
         object-fit: cover;
         margin: 20px auto;
@@ -143,12 +164,12 @@ background: linear-gradient(90deg, rgba(133,7,81,1) 0%, rgba(213,7,13,1) 100%, r
 }
 
 .info-1{
-    font-size: toRem(15);
+    font-size: toRem(12);
     font-weight: 600;
 }
 
 .info-2{
-    font-size: toRem(12);
+    font-size: toRem(10);
     font-weight: 300;
 }
 

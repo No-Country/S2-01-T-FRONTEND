@@ -14,7 +14,7 @@
     text-align: center;
     @include exo-font;
     //background: linear-gradient(159.53deg, rgb(5, 6, 11) 4.03%, rgb(27, 32, 53) 23.26%, rgb(10, 12, 15) 93.99%);
-    width: 80%;
+    width: toRem(var(--widthCont));
     position: relative;
 
     & .separator {
@@ -37,22 +37,15 @@
 
 }
 
-.title-login{
-    @include exo-font;
-    color: rgb(14, 13, 13);
-    font-size: toRem(20);
-    font-weight: 500;
-
-}
-
 .container-img{
     margin: toRem(0) auto;
-    width: toRem(400);
+    width: toRem(var(--widthCont));
     display: flex;
     justify-content: center;
 }
 
 .img-reg {
+    min-width: toRem(100);
     max-width: toRem(150);
     max-height: toRem(150);
     padding-top: toRem(5);
@@ -62,13 +55,13 @@
     display: block;
     columns: toRem(400);
     margin: 0 auto;
-    width: toRem(400);
+    width: toRem(var(--widthCont));
 }
 
 .container-input{
     display: block;
     margin: 0 auto;
-    width: toRem(400);
+    width: toRem(var(--widthCont));
 }
 
 .label-login{
@@ -132,12 +125,17 @@
 .error-login{
     background: rgba(167, 8, 8,0.9);
     border-radius: 0.3125rem;
+    width: toRem(var(--widthCont));
+    margin: 0 auto;
+
 
     & .text-error{
         font-size: toRem(13);
         padding: toRem(5);
         font-weight: 400;
         color: white;
+        text-align: center;
+
     }
     & .icon-error{
         color: white;
@@ -148,10 +146,17 @@
 
 .msg-error-email-reg{
     
-    margin: toRem(5) 0 0 0;
+    margin: toRem(5) auto;
     padding-left: toRem(10);
     text-align: left;
     font-size: toRem(12);
     color: var(--red);
     
+}
+
+@media (max-width: 500px) {
+    :root{
+        --widthCont: 280;
+    }
+        
 }
