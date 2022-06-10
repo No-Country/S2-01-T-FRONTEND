@@ -11,7 +11,7 @@ import { PublicRouter } from "./PublicRouter";
 
 export const MainRouter = () => {
   //? Validacion de usuario logeado
-  const isLogged = true;
+  const isLogged = false;
 
   return (
     <BrowserRouter>
