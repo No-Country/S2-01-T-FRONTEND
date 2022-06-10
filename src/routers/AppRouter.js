@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import LoginPage from "../pages/auth/login/domain/LoginPageInput";
@@ -15,19 +15,21 @@ import PrivateRouter from "./PrivateRouter";
 const AppRouter = () => {
   return (
     <Router>
-      <Navbar />
+      <Fragment>
+        <Navbar />
 
-      <Routes>
-        <Route path="/" index element={<HomePage />} />
-        <Route exact path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/ayuda" element={<HelpPage />} />
-        <Route exact path="/search" element={<SearchPage />} />
-        <Route path="/about" element={<AboutMePage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="*" element={<Error404Page />} />
-      </Routes>
-      <Footer />
+        <Routes>
+          <Route path="/" index element={<HomePage />} />
+          <Route exact path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/ayuda" element={<HelpPage />} />
+          <PrivateRouter exact path="/search" element={<SearchPage />} />
+          <Route path="/about" element={<AboutMePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<Error404Page />} />
+        </Routes>
+        <Footer />
+      </Fragment>
     </Router>
   );
 };
