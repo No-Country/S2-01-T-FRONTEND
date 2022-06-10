@@ -1,58 +1,39 @@
-.container{
-    width: 100%;
+.container-register{
     padding: 0px;
     margin: 0px;
 }
 
-.contenedor {
-    display: flex;
-    flex-direction: column;
-    font-size: toRem(15);
-    padding-top: 0%;
-    margin-top: 0px;
-    margin: toRem(30) auto;
-    text-align: center;
-    @include exo-font;
-    //background: linear-gradient(159.53deg, rgb(5, 6, 11) 4.03%, rgb(27, 32, 53) 23.26%, rgb(10, 12, 15) 93.99%);
-    width: 80%;
-    position: relative;
+.contenedor-register {
+        width: 60%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: toRem(10);
+        font-size: toRem(15);
+        @include exo-font;
+        //background: linear-gradient(159.53deg, rgb(5, 6, 11) 4.03%, rgb(27, 32, 53) 23.26%, rgb(10, 12, 15) 93.99%);
+        position: relative;
+        margin: 5px auto;
+        
+        & .label-input{
+            display: grid;
+            grid-template-rows: repeat(2,1fr);
+            width: 100%;
 
-    & .separator {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        column-gap: 1.25rem;
-        font-weight: 400;
-        font-size: 1rem;
 
-    }
-
-    & hr {
-        flex: 1;
-        background: var(--red);
-        border: 0.125rem solid var(--red);
-        ;
-
-    }
-
+        }
 }
 
-.title-login{
-    @include exo-font;
-    color: rgb(14, 13, 13);
-    font-size: toRem(20);
-    font-weight: 500;
 
-}
-
-.container-img{
-    margin: toRem(0) auto;
-    width: toRem(400);
+.container-img-reg{
+    margin: toRem(15) auto;
+    width: toRem(var(--widthCont));
     display: flex;
     justify-content: center;
+    margin: toRem(20) auto;
 }
 
 .img-reg {
+    min-width: toRem(100);
     max-width: toRem(150);
     max-height: toRem(150);
     padding-top: toRem(5);
@@ -62,13 +43,13 @@
     display: block;
     columns: toRem(400);
     margin: 0 auto;
-    width: toRem(400);
+    width: toRem(var(--widthCont));
 }
 
 .container-input{
     display: block;
     margin: 0 auto;
-    width: toRem(400);
+    width: toRem(var(--widthCont));
 }
 
 .label-login{
@@ -132,12 +113,17 @@
 .error-login{
     background: rgba(167, 8, 8,0.9);
     border-radius: 0.3125rem;
+    width: toRem(var(--widthCont));
+    margin: 0 auto;
+
 
     & .text-error{
         font-size: toRem(13);
         padding: toRem(5);
         font-weight: 400;
         color: white;
+        text-align: center;
+
     }
     & .icon-error{
         color: white;
@@ -148,10 +134,39 @@
 
 .msg-error-email-reg{
     
-    margin: toRem(5) 0 0 0;
+    margin: toRem(5) auto;
     padding-left: toRem(10);
     text-align: left;
     font-size: toRem(12);
     color: var(--red);
     
+}
+
+@media (max-width: 500px) {
+    :root{
+        --widthCont: 280;
+    }
+        
+}
+
+@media (max-width: 1200px) {
+    
+    .contenedor-register {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+        
+}
+
+@media (max-width: 770px) {
+    
+    .contenedor-register {
+        width: toRem(var(--widthCont));
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+        
 }

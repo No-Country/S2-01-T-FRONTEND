@@ -1,9 +1,31 @@
 .input-login{
     @include exo-font;
     line-height: toRem(40); // EL texto siempre este en el centro del mismo alto del input
+    height: toRem(35);
+    width: toRem(var(--widthCont));
+    font-size: toRem(14);
+    border-radius: 0.3125rem;
+    border: toRem(2) solid var(--negroAzabache);
+    padding: 0 toRem(40) 0 toRem(10);
+
+    &:focus{
+        border: toRem(2) solid var(--red);
+        outline: none;
+        box-shadow: toRem(3) 0 toRem(30) rgba(163,163,163, 0.6);
+    }
+
+    &:hover{
+        outline: none;
+        box-shadow: toRem(3) 0 toRem(30) rgba(163,163,163, 0.6);
+    }
+}
+
+.input-reg{
+    @include exo-font;
+    line-height: toRem(40); // EL texto siempre este en el centro del mismo alto del input
+    height: toRem(35);
     width: 100%;
-    height: toRem(40);
-    font-size: toRem(15);
+    font-size: toRem(14);
     border-radius: 0.3125rem;
     border: toRem(2) solid var(--negroAzabache);
     padding: 0 toRem(40) 0 toRem(10);
@@ -54,3 +76,4 @@
     position: relative;
     z-index: 90;
 }
+

@@ -4,8 +4,10 @@ import Button from '@mui/material/Button';
 import Logo from "../../assets/img/logo.png";
 import TiendaPagos from "../../assets/img/tienda-pagos.png";
 import Grid from '@mui/material/Grid';
+import { NavLink } from "react-router-dom";
 
 import Container from '@mui/material/Container';
+import { width } from "@mui/system";
 
 function PrincipalSection() {
 
@@ -19,9 +21,16 @@ function PrincipalSection() {
                         <h2>elFiado.com</h2>
                         <p>Conocé mas acerca del comportamiento crediticio <br></br>de tus clientes y viceversa</p>
                     </Container>
-                    <Container className="registerAndHome">
-                        <Button color="warning" variant="contained" className="registerBtn" href="/register">Registrate! </Button>
+                    <Container className="registerAndHome"> 
+
+                    <NavLink to="/register" style={{ textDecoration: 'none' }}>
+                        <Button color="warning" variant="contained" className="registerBtn" to="/register">Registrate! </Button>
+                    </NavLink>
                         <img src={Logo} alt="LogoIcon" />
+
+                   
+                        
+                        
                     </Container>
                 </Grid>
 

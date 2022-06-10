@@ -53,9 +53,9 @@ const RegisterPage = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="contenedor">
-          <div className="container-img">
+      <div className="container-register">
+        <div className="container-head">
+          <div className="container-img-reg">
             <img
               className="img-reg"
               src={watch("role") === "Client" ? logoClient : logoFiado}
@@ -68,362 +68,375 @@ const RegisterPage = () => {
               <DoubleArrowIcon className="icon-login" /> Registrarme
             </h1>
           </div>
-          <div className="container-input">
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <label className="label-login">Actividad Económica</label>
-              <select
-                className="form-control-reg input-login"
-                id="role"
-                name="role"
-                onChange={handleInput}
-                {...register("role", {
-                  required: {
-                    value: true,
-                    message: "El campo es requerido",
-                  },
-                  pattern: {
-                    value: EXPRESIONES.NAME,
-                    message: "El formato del nombre no es correcto",
-                  },
-                })}
-              >
-                <option value="">Seleccione un Rol</option>
-                <option value={ROLES.SHOP}>Comercio</option>
-                <option value={ROLES.CLIENT}>Cliente</option>
-              </select>
-
-              {!watch("role") ? (
-                <div className="error-login">
-                  <p className="text-error">
-                    <b>Nota: </b> Por favor elija un rol para diligenciar el
-                    formulario
-                  </p>
-                </div>
-              ) : (
-                <div>
-                  {/* ------------------------ Inicio de los input ---------------------------*/}
-
-                  {watch("role") === "Shop" && (
-                    <>
-                      <label htmlFor="user" className="label-login">
-                        Razón Social
-                      </label>
-                      <div className="group-input">
-                        <input
-                          id="razonSocial"
-                          name="razonSocial"
-                          type="text"
-                          placeholder="Ingrese Nombre de la Tienda"
-                          className="input-login"
-                          onChange={handleInput}
-                          {...register("razonSocial", {
-                            required: {
-                              value: true,
-                              message: "El campo es requerido",
-                            },
-                            pattern: {
-                              value: EXPRESIONES.ADDRESS,
-                              message: "El formato no es correcto",
-                            },
-                          })}
-                        />
-                      </div>
-                      {errors.razonSocial && (
-                        <p className="msg-error-email-reg">
-                          {errors.razonSocial.message}
-                        </p>
-                      )}
-                    </>
-                  )}
-
-                  <label htmlFor="user" className="label-login">
-                    Nombre
-                  </label>
-                  <div className="group-input">
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="Nombre y Apellido"
-                      className="input-login"
-                      onChange={handleInput}
-                      {...register("name", {
-                        required: {
-                          value: true,
-                          message: "El campo es requerido",
-                        },
-                        pattern: {
-                          value: EXPRESIONES.NAME,
-                          message: "El formato del nombre no es correcto",
-                        },
-                      })}
-                    />
-                  </div>
-                  {errors.name && (
-                    <p className="msg-error-email-reg">{errors.name.message}</p>
-                  )}
-
-                  <label htmlFor="user" className="label-login">
-                    Apellido
-                  </label>
-                  <div className="group-input">
-                    <input
-                      id="lastName"
-                      name="lastName"
-                      type="text"
-                      placeholder="Ingrese Apellido"
-                      className="input-login"
-                      onChange={handleInput}
-                      {...register("lastName", {
-                        required: {
-                          value: true,
-                          message: "El campo es requerido",
-                        },
-                        pattern: {
-                          value: EXPRESIONES.NAME,
-                          message: "El formato del Apellido no es correcto",
-                        },
-                      })}
-                    />
-                  </div>
-                  {errors.lastName && (
-                    <p className="msg-error-email-reg">
-                      {errors.lastName.message}
-                    </p>
-                  )}
-
-                  <label htmlFor="user" className="label-login">
-                    Identificación
-                  </label>
-                  <div className="group-input">
-                    <input
-                      id="dni"
-                      name="dni"
-                      type="text"
-                      placeholder="Ingrese identificación"
-                      className="input-login"
-                      onChange={handleInput}
-                      {...register("dni", {
-                        required: {
-                          value: true,
-                          message: "El campo es requerido",
-                        },
-                        minLength: {
-                          value: 6,
-                          message:
-                            "La identificación debe contener al menos 6 caracteres",
-                        },
-                        pattern: {
-                          value: EXPRESIONES.IDENT,
-                          message: "No debe contener letras, puntos o espacios",
-                        },
-                      })}
-                    />
-                  </div>
-                  {errors.dni && (
-                    <p className="msg-error-email-reg">{errors.dni.message}</p>
-                  )}
-
-                  <label htmlFor="user" className="label-login">
-                    Correo Electrónico
-                  </label>
-                  <div className="group-input">
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="ejemplo@miemail.com"
-                      className="input-login"
-                      onChange={handleInput}
-                      {...register("email", {
-                        required: {
-                          value: true,
-                          message: "El campo es requerido",
-                        },
-                        pattern: {
-                          value: EXPRESIONES.EMAIL,
-                          message: "El formato del correo no es correcto",
-                        },
-                      })}
-                    />
-                  </div>
-                  {errors.email && (
-                    <p className="msg-error-email-reg">
-                      {errors.email.message}
-                    </p>
-                  )}
-
-                  <label htmlFor="user" className="label-login">
-                    Número de Contacto
-                  </label>
-                  <div className="group-input">
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="text"
-                      placeholder="xxx-xxx-xxxx"
-                      className="input-login"
-                      onChange={handleInput}
-                      {...register("phone", {
-                        required: {
-                          value: true,
-                          message: "El campo es requerido",
-                        },
-                        pattern: {
-                          value: EXPRESIONES.PHONE,
-                          message:
-                            "El formato del número telefónico no es correcto",
-                        },
-                      })}
-                    />
-                  </div>
-                  {errors.phone && (
-                    <p className="msg-error-email-reg">
-                      {errors.phone.message}
-                    </p>
-                  )}
-
-                  <label htmlFor="user" className="label-login">
-                    Contraseña
-                  </label>
-                  <div className="group-input">
-                    <input
-                      id="pass"
-                      name="pass"
-                      type="password"
-                      placeholder="******"
-                      className="input-login"
-                      onChange={handleInput}
-                      {...register("pass", {
-                        required: {
-                          value: true,
-                          message: "El campo es requerido",
-                        },
-                        minLength: {
-                          value: 6,
-                          message:
-                            "La contraseña debe contener al menos 6 caracteres",
-                        },
-                        pattern: {
-                          value: EXPRESIONES.PASSWORD,
-                          message:
-                            "No debe contener caracteres especiales (/@´'=?¡) ni espacios",
-                        },
-                      })}
-                    />
-                  </div>
-                  {errors.pass && (
-                    <p className="msg-error-email-reg">{errors.pass.message}</p>
-                  )}
-
-                  <label htmlFor="user" className="label-login">
-                    Dirección de Domicilio
-                  </label>
-                  <div className="group-input">
-                    <input
-                      id="address"
-                      name="address"
-                      type="text"
-                      placeholder="712 Red Bark Ln, Henderson, NV 89011"
-                      className="input-login"
-                      onChange={handleInput}
-                      {...register("address", {
-                        required: {
-                          value: true,
-                          message: "El campo es requerido",
-                        },
-
-                        pattern: {
-                          value: EXPRESIONES.ADDRESS,
-                          message: "El formato no es valido",
-                        },
-                      })}
-                    />
-                  </div>
-                  {errors.address && (
-                    <p className="msg-error-email-reg">
-                      {errors.address.message}
-                    </p>
-                  )}
-
-                  <label className="label-login">Ciudad</label>
-                  <div className="group-input">
-                    <input
-                      id="city"
-                      name="city"
-                      type="text"
-                      placeholder="Ingresa una Ciudad"
-                      className="input-login"
-                      onChange={handleInput}
-                      {...register("city", {
-                        required: {
-                          value: true,
-                          message: "El campo es requerido",
-                        },
-
-                        pattern: {
-                          value: EXPRESIONES.ADDRESS,
-                          message: "El formato no es valido",
-                        },
-                      })}
-                    />
-                  </div>
-                  {errors.city && (
-                    <p className="msg-error-email-reg">{errors.city.message}</p>
-                  )}
-
-                  <div>
-                    <label className="label-login">Pais</label>
-                    <select
-                      className="form-control-reg input-login"
-                      id="country"
-                      name="country"
-                      onChange={handleInput}
-                      {...register("country", {
-                        required: {
-                          value: true,
-                          message: "El campo es requerido",
-                        },
-                      })}
-                    >
-                      <option value="">Select a Country</option>
-                      {countrys.map((country) => (
-                        <option key={country.code} value={country.label}>
-                          {`${country.label} (+${country.phone})`}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  {errors.country && (
-                    <p className="msg-error-email-reg">
-                      {errors.country.message}
-                    </p>
-                  )}
-                </div>
-              )}
-
-              {/*<InputComp enviosProps={passProps} />*/}
-
-              {false && (
-                <div className="error-login">
-                  <p className="text-error">
-                    <ReportProblemIcon className="icon-error" />
-                    <b>Error: </b> Por favor diligenciar el formulario
-                    correctamente
-                  </p>
-                </div>
-              )}
-
-              {watch("role") && (
-                <div className="container-input">
-                  <button className="signin-btn" type="submit">
-                    <div className="ingresar">Registrarme</div>
-                  </button>
-                </div>
-              )}
-            </form>
-          </div>
         </div>
+
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="container-input">
+            <label className="label-login">Actividad Económica</label>
+            <select
+              className="form-control-reg input-reg"
+              id="role"
+              name="role"
+              onChange={handleInput}
+              {...register("role", {
+                required: {
+                  value: true,
+                  message: "El campo es requerido",
+                },
+                pattern: {
+                  value: EXPRESIONES.NAME,
+                  message: "El formato del nombre no es correcto",
+                },
+              })}
+            >
+              <option value="">Seleccione un Rol</option>
+              <option value={ROLES.SHOP}>Comercio</option>
+              <option value={ROLES.CLIENT}>Cliente</option>
+            </select>
+          </div>
+
+          {!watch("role") ? (
+            <div className="error-login">
+              <p className="text-error">
+                <b>Nota: </b> Por favor elija un rol para diligenciar el
+                formulario
+              </p>
+            </div>
+          ) : (
+            <div className="contenedor-register">
+              {/* ------------------------ Inicio de los input ---------------------------*/}
+
+              {watch("role") === "Shop" && (
+                <div className="label-input">
+                  <label htmlFor="user" className="label-login">
+                    Razón Social
+                  </label>
+                  <div className="group-input">
+                    <input
+                      id="razonSocial"
+                      name="razonSocial"
+                      type="text"
+                      placeholder="Ingrese Nombre de la Tienda"
+                      className="input-reg"
+                      onChange={handleInput}
+                      {...register("razonSocial", {
+                        required: {
+                          value: true,
+                          message: "El campo es requerido",
+                        },
+                        pattern: {
+                          value: EXPRESIONES.ADDRESS,
+                          message: "El formato no es correcto",
+                        },
+                      })}
+                    />
+                  </div>
+                  {errors.razonSocial && (
+                    <p className="msg-error-email-reg">
+                      {errors.razonSocial.message}
+                    </p>
+                  )}
+                </div>
+              )}
+
+              <div className="label-input">
+                <label htmlFor="user" className="label-login">
+                  Nombre
+                </label>
+                <div className="group-input">
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Ingrese un Nombre"
+                    className="input-reg"
+                    onChange={handleInput}
+                    {...register("name", {
+                      required: {
+                        value: true,
+                        message: "El campo es requerido",
+                      },
+                      pattern: {
+                        value: EXPRESIONES.NAME,
+                        message: "El formato del nombre no es correcto",
+                      },
+                    })}
+                  />
+                </div>
+                {errors.name && (
+                  <p className="msg-error-email-reg">{errors.name.message}</p>
+                )}
+              </div>
+
+              <div className="label-input">
+                <label htmlFor="user" className="label-login">
+                  Apellido
+                </label>
+                <div className="group-input">
+                  <input
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    placeholder="Ingrese Apellido"
+                    className="input-reg"
+                    onChange={handleInput}
+                    {...register("lastName", {
+                      required: {
+                        value: true,
+                        message: "El campo es requerido",
+                      },
+                      pattern: {
+                        value: EXPRESIONES.NAME,
+                        message: "El formato del Apellido no es correcto",
+                      },
+                    })}
+                  />
+                </div>
+                {errors.lastName && (
+                  <p className="msg-error-email-reg">
+                    {errors.lastName.message}
+                  </p>
+                )}
+              </div>
+
+              <div className="label-input">
+                <label htmlFor="user" className="label-login">
+                  Identificación
+                </label>
+                <div className="group-input">
+                  <input
+                    id="dni"
+                    name="dni"
+                    type="text"
+                    placeholder="Ingrese identificación"
+                    className="input-reg"
+                    onChange={handleInput}
+                    {...register("dni", {
+                      required: {
+                        value: true,
+                        message: "El campo es requerido",
+                      },
+                      minLength: {
+                        value: 6,
+                        message:
+                          "La identificación debe contener al menos 6 caracteres",
+                      },
+                      pattern: {
+                        value: EXPRESIONES.IDENT,
+                        message: "No debe contener letras, puntos o espacios",
+                      },
+                    })}
+                  />
+                </div>
+                {errors.dni && (
+                  <p className="msg-error-email-reg">{errors.dni.message}</p>
+                )}
+              </div>
+
+              <div className="label-input">
+                <label htmlFor="user" className="label-login">
+                  Correo Electrónico
+                </label>
+                <div className="group-input">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="ejemplo@miemail.com"
+                    className="input-reg"
+                    onChange={handleInput}
+                    {...register("email", {
+                      required: {
+                        value: true,
+                        message: "El campo es requerido",
+                      },
+                      pattern: {
+                        value: EXPRESIONES.EMAIL,
+                        message: "El formato del correo no es correcto",
+                      },
+                    })}
+                  />
+                </div>
+                {errors.email && (
+                  <p className="msg-error-email-reg">{errors.email.message}</p>
+                )}
+              </div>
+
+              <div className="label-input">
+                <label htmlFor="user" className="label-login">
+                  Número de Contacto
+                </label>
+                <div className="group-input">
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="text"
+                    placeholder="xxx-xxx-xxxx"
+                    className="input-reg"
+                    onChange={handleInput}
+                    {...register("phone", {
+                      required: {
+                        value: true,
+                        message: "El campo es requerido",
+                      },
+                      pattern: {
+                        value: EXPRESIONES.PHONE,
+                        message:
+                          "El formato del número telefónico no es correcto",
+                      },
+                    })}
+                  />
+                </div>
+                {errors.phone && (
+                  <p className="msg-error-email-reg">{errors.phone.message}</p>
+                )}
+              </div>
+
+              <div className="label-input">
+                <label htmlFor="user" className="label-login">
+                  Contraseña
+                </label>
+                <div className="group-input">
+                  <input
+                    id="pass"
+                    name="pass"
+                    type="password"
+                    placeholder="******"
+                    className="input-reg"
+                    onChange={handleInput}
+                    {...register("pass", {
+                      required: {
+                        value: true,
+                        message: "El campo es requerido",
+                      },
+                      minLength: {
+                        value: 6,
+                        message:
+                          "La contraseña debe contener al menos 6 caracteres",
+                      },
+                      pattern: {
+                        value: EXPRESIONES.PASSWORD,
+                        message:
+                          "No debe contener caracteres especiales (/@´'=?¡) ni espacios",
+                      },
+                    })}
+                  />
+                </div>
+                {errors.pass && (
+                  <p className="msg-error-email-reg">{errors.pass.message}</p>
+                )}
+              </div>
+
+              <div className="label-input">
+                <label htmlFor="user" className="label-login">
+                  Dirección de Domicilio
+                </label>
+                <div className="group-input">
+                  <input
+                    id="address"
+                    name="address"
+                    type="text"
+                    placeholder="712 Red Bark Ln, Henderson, NV 89011"
+                    className="input-reg"
+                    onChange={handleInput}
+                    {...register("address", {
+                      required: {
+                        value: true,
+                        message: "El campo es requerido",
+                      },
+
+                      pattern: {
+                        value: EXPRESIONES.ADDRESS,
+                        message: "El formato no es valido",
+                      },
+                    })}
+                  />
+                </div>
+                {errors.address && (
+                  <p className="msg-error-email-reg">
+                    {errors.address.message}
+                  </p>
+                )}
+              </div>
+
+              <div className="label-input">
+                <label className="label-login">Ciudad</label>
+                <div className="group-input">
+                  <input
+                    id="city"
+                    name="city"
+                    type="text"
+                    placeholder="Ingresa una Ciudad"
+                    className="input-reg"
+                    onChange={handleInput}
+                    {...register("city", {
+                      required: {
+                        value: true,
+                        message: "El campo es requerido",
+                      },
+
+                      pattern: {
+                        value: EXPRESIONES.ADDRESS,
+                        message: "El formato no es valido",
+                      },
+                    })}
+                  />
+                </div>
+                {errors.city && (
+                  <p className="msg-error-email-reg">{errors.city.message}</p>
+                )}
+              </div>
+
+              <div className="label-input">
+                <label className="label-login">Pais</label>
+                <select
+                  className="form-control-reg input-reg"
+                  id="country"
+                  name="country"
+                  onChange={handleInput}
+                  {...register("country", {
+                    required: {
+                      value: true,
+                      message: "El campo es requerido",
+                    },
+                  })}
+                >
+                  <option value="">Select a Country</option>
+                  {countrys.map((country) => (
+                    <option key={country.code} value={country.label}>
+                      {`${country.label} (+${country.phone})`}
+                    </option>
+                  ))}
+                </select>
+                {errors.country && (
+                  <p className="msg-error-email-reg">
+                    {errors.country.message}
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/*<InputComp enviosProps={passProps} />*/}
+
+          {false && (
+            <div className="error-login">
+              <p className="text-error">
+                <ReportProblemIcon className="icon-error" />
+                <b>Error: </b> Por favor diligenciar el formulario correctamente
+              </p>
+            </div>
+          )}
+          <div>
+            {watch("role") && (
+              <div className="container-input">
+                <button className="signin-btn" type="submit">
+                  <div className="ingresar">Registrarme</div>
+                </button>
+              </div>
+            )}
+          </div>
+        </form>
       </div>
     </>
   );

@@ -14,7 +14,7 @@ width: 100%;
         width: 45px;
         height: 45px;
             .icono_img{
-            border-radius: 50%;
+            border-radius: 10%;
             background-color: white; 
             border: 1px solid white;
             width: 100%;
@@ -65,6 +65,14 @@ width: 100%;
             display: none;
         }           
     }
+    Button{
+        color: white; 
+       position: relative;
+       bottom:8px;
+       right: 8px;
+    }
+       
+  
    .burger{
          position: relative;
          width: 50px;
@@ -77,14 +85,23 @@ width: 100%;
          width: 50px;
          height: 40px;
          top: 8px;
-         color: white;                        
+         color: white;     
+                            
        }   
        .burger_icon{
              width: 100%;
              height: 100%;
-       }      
+       }   
+              
    }
 `
+
+
+
+
+
+
+
 
 
 
