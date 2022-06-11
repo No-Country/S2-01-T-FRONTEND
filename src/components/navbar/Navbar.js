@@ -71,35 +71,42 @@ const Navbar = () => {
             anchor="right"
             open={open}
             onClose={() => setOpen(false)}
+            sx={{paperAnchorRight:"red"}}
+            
           >
-            <List className="list">
+            <List sx={{background:"red"}}className="list">
               {
                 <ListItemButton
                   style={{ display: "flex", flexDirection: "column" }}
                   className="dropdown"
                   onClick={() => setOpen(false)}
+                  
                 >
-                  <NavLink to="/app/search" style={{ textDecoration: "none" }}>
-                    <ListItemText>Buscar</ListItemText>{" "}
-                  </NavLink>
-                  <NavLink to="/app/ayuda" style={{ textDecoration: "none" }}>
-                    <ListItemText>Ayuda</ListItemText>
-                  </NavLink>
-                  <NavLink to="/" style={{ textDecoration: "none" }}>
-                    <ListItemText>Contacto</ListItemText>
-                  </NavLink>
-                  <NavLink to="/about" style={{ textDecoration: "none" }}>
-                    <ListItemText>Quienes Somos</ListItemText>{" "}
-                  </NavLink>
-                  <NavLink to="/auth/login" style={{ textDecoration: "none" }}>
+                   <NavLink to="/auth/login" style={{ textDecoration: "none",color:"white" }}>
                     <ListItemText>Acceder</ListItemText>{" "}
                   </NavLink>
                   <NavLink
                     to="/auth/register"
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none",color:"white" }}
                   >
                     <ListItemText>Registrarse</ListItemText>{" "}
                   </NavLink>
+                  <NavLink to="/app/search" style={{ textDecoration: "none",color:"white"}}>
+                    <ListItemText >Buscar</ListItemText>{" "}
+                  </NavLink>
+                  <NavLink to="/about" style={{ textDecoration: "none",color:"white" }}>
+                    <ListItemText>Quienes Somos</ListItemText>{" "}
+                  </NavLink>
+                  <NavLink to="/" style={{ textDecoration: "none",color:"white" }}>
+                    <ListItemText>Contacto</ListItemText>
+                  </NavLink>
+                  <NavLink to="/app/ayuda" style={{ textDecoration: "none",color:"white" }}>
+                    <ListItemText>Ayuda</ListItemText>
+                  </NavLink>
+                 
+                 
+                 
+                 
                 </ListItemButton>
               }
             </List>

@@ -85,15 +85,20 @@ width: 100%;
          width: 50px;
          height: 40px;
          top: 8px;
-         color: white;     
+         color: white; 
+         &:hover{
+            background: linear-gradient( 135deg, #FD6E6A 10%, #FFC600 100%);  
+         }    
                             
        }   
        .burger_icon{
              width: 100%;
              height: 100%;
        }   
+ 
               
    }
+  
 `
 
 
