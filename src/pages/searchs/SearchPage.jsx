@@ -7,8 +7,9 @@ import { UserContext } from "../../providers/UserProvider";
 
 const Search = () => {
   const [search, setSearch] = useState([""]);
+
   const dataUser = useContext(UserContext);
-  console.log(dataUser);
+  console.log(dataUser.userActive);
 
   const handleInput = (e) => {
     setSearch(e.target.value);
