@@ -1,4 +1,5 @@
-const urlDataClient = "/dataClient.json";
+//const urlDataClient = "/dataClient.json";
+const urlDataClient = "https://fiadosya.herokuapp.com/api/v1/customer/all";
 
 const getClient = async () => {
   try {

@@ -49,8 +49,10 @@ const UserPure = ({ buscar }) => {
                 <img src={logoUser} alt="" />
               </div>
               <div className="card-container">
-                <div className="info-1 ">{cliente.name}</div>
-                <div className="info-2 show">{cliente.address}</div>
+                <div className="info-1 ">
+                  {cliente.firstName} {cliente.lastName}
+                </div>
+                <div className="info-2 show">{cliente.adress}</div>
                 <div className="info-3 show">{cliente.country}</div>
                 <div className="show">
                   <RatingStar rating={cliente.rating} />
