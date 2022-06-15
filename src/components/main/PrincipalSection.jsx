@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import { NavLink } from "react-router-dom";
 
 import Container from '@mui/material/Container';
-import { width } from "@mui/system";
+
 
 function PrincipalSection() {
 
@@ -18,7 +18,7 @@ function PrincipalSection() {
 
                 <Grid item xs={12} md={6}  xl={6}>
                     <Container className="titleAndParagraph">
-                        <h2>elFiado.com</h2>
+                        <h2>elFiadoYa.com</h2>
                         <p>Conocé mas acerca del comportamiento crediticio <br></br>de tus clientes y viceversa</p>
                     </Container>
                     <Container className="registerAndHome"> 
