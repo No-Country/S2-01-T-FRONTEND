@@ -25,21 +25,17 @@ const LoginPage = () => {
   //     setDataUser({ ...dataUser, [event.target.name]: event.target.value });
   //   };
   const urlLogin = "https://fiadosya.herokuapp.com/auth/login";
-  const handleSetData = async () => {
-    addObject();
-    try {
-      await axios
-        .post(urlLogin, dataImport)
-        .then((data) => setUserActive(data.data));
-      console.log(userActive);
 
-      setIsLogged(true);
-      // * Reset los campos
-      setPass({ campo: "", valido: null });
-      setUser({ campo: "", valido: null });
-    } catch (error) {
-      console.log(error);
-    }
+  //? Metodo para hacer la peticion post
+  const handleSetData = (e) => {
+    e.preventDefault();
+    addObject();
+
+    axios.post(urlLogin, dataImport);
+
+    // * Reset los campos
+    setPass({ campo: "", valido: null });
+    setUser({ campo: "", valido: null });
   };
 
   const addObject = () => {
@@ -73,7 +69,7 @@ const LoginPage = () => {
             <hr className="divisor" />
           </div>
           <div className="container-input">
-            <form>
+            <form onSubmit={handleSetData}>
               <InputComp
                 label="Usuarios"
                 name="name"
@@ -111,13 +107,7 @@ const LoginPage = () => {
               )}
 
               <div className="container-input">
-                <button
-                  className="signin-btn"
-                  type="button"
-                  onClick={() => {
-                    handleSetData();
-                  }}
-                >
+                <button className="signin-btn" type="submit">
                   <div className="ingresar">Ingresar</div>
                 </button>
               </div>

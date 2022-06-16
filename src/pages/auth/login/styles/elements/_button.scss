@@ -26,6 +26,38 @@
 
 }
 
+.btn-register{
+    @include exo-font;
+    font-weight: 500;
+    font-size: toRem(21);
+    padding: toRem(15) toRem(15);
+    margin-top: toRem(35);
+    margin-bottom: toRem(10);
+    border-radius: 0.3125rem;
+    background: var(--negroAzabache);
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border: none;
+    height: 2.5rem;
+    line-height: 0;
+    transition: 0.5s;
+    width: 80%;
+    color: rgb(255, 255, 255);
+    filter: brightness(100%);
+
+    &:hover {
+        cursor: pointer;
+        background: var(--negroAzabache);
+        transform: scale(0.98);
+        box-shadow: toRem(5) 0px toRem(30) rgb(121, 119, 119)
+        
+    }
+}
+
 .register-btn {
     @include primary-font;
     font-weight: 500;

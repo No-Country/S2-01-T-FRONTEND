@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "../components/footer/Footer";
-import Navbar from "../components/navbar/Navbar";
+import Navbar from "../components/navbar/NavBarComponent";
 import Error404Page from "../pages/404/Error404Page";
 import AboutMePage from "../pages/aboutMe/AboutMePage";
 import ContactPage from "../pages/contact/ContactPage";
@@ -13,7 +13,8 @@ import { PublicRouter } from "./PublicRouter";
 
 export const MainRouter = () => {
   //? Validacion de usuario logeado
-  const { isLogged } = useContext(UserContext);
+  const { isLogged, userActive } = useContext(UserContext);
+  console.log(userActive);
 
   return (
     <BrowserRouter>

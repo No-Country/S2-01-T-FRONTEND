@@ -54,6 +54,7 @@ const InputComp = ({
           onKeyUp={validate}
           onBlur={validate}
           valido={estado.valido}
+          required
         />
         {estado.valido === null ? (
           ((<CancelIcon className="icon-validate-cancel" />),

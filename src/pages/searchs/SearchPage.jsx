@@ -1,15 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import UserList from "../../components/userList/UserList";
 import "../auth/login/styles/_loginStyle.scss";
 import SearchIcon from "@mui/icons-material/Search";
 import getClient from "../../services/getClient";
-import { UserContext } from "../../providers/UserProvider";
 
 const Search = () => {
   const [search, setSearch] = useState([""]);
-
-  const dataUser = useContext(UserContext);
-  console.log(dataUser.userActive);
 
   const handleInput = (e) => {
     setSearch(e.target.value);

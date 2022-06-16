@@ -1,0 +1,148 @@
+.navbar{
+    display: flex;
+    width: 100%;
+    height: toRem(55);
+    background-color: var(--red);
+    justify-content: space-between;
+
+    .link-nav{
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+
+        & .links {
+            text-decoration: none;
+            padding: toRem(8);
+            color: white;
+
+            &:hover{
+                border-bottom: toRem(2) solid white;
+                border-radius: 10%;
+            }
+
+        }
+    }
+
+    .user-perfil{
+        display: flex;
+        align-items: center;
+        align-content: center;
+        margin-right: toRem(15);
+
+
+        & .links {
+            text-decoration: none;
+            padding: toRem(8);
+            color: white;
+
+            &:hover{
+                border-bottom: toRem(2) solid white;
+                border-radius: 10%;
+            }
+
+        }
+    }
+}
+
+.nav-img{
+    height: 100%;
+    width: toRem(40);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-left: toRem(10);
+
+    & img {
+        width: toRem(40);
+        background: white;
+        border-radius: 10%;
+        
+    }
+}
+
+.active{
+    border-bottom: toRem(2) solid white;
+    border-radius: 5%;
+}
+
+// ? Desing responsive page
+
+.cont-icon-menu{
+    height: 100%;
+    display: none;
+
+    & #icon-menu{
+        color: whitesmoke !important;
+        font-size: toRem(28);
+
+    }
+    
+
+
+}
+
+.menu-hamb{
+    display: none;
+}
+
+
+@media screen and (max-width: 768px){
+    .cont-icon-menu{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-right: toRem(10);
+
+    & #icon-menu{
+        color: whitesmoke !important;
+        font-size: toRem(32);
+        cursor: pointer;
+        
+
+        }
+    
+    }
+
+
+    .navbar{
+     
+        & .link-nav{
+            display: none;
+        }
+
+    }
+
+    .menu-hamb{
+        display: block;
+        & .link-nav-hamb{
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6,1fr);
+            width: toRem(200);
+            float: right;
+            background: rgba($color: #000000, $alpha: 0.8);
+            transition: all 1s ease;
+            z-index: 10000;
+        
+            & .links {
+                text-decoration: none;
+                padding: toRem(8);
+                color: white;
+    
+                &:hover{
+                    border-left: toRem(2) solid white;
+                    border-radius: 5%;
+                }
+    
+            }
+        
+        }
+
+    }
+
+}
+
+
