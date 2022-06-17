@@ -12,39 +12,51 @@ import axios from "axios";
 
 const RegisterPage = () => {
   // ----------------------- Variables de estados -----------------------------
-  const [client, setClient] = useState({});
+  const [client, setClient] = useState(null);
 
   // --------------------------------------------------------------------------
-  const urlPost = "https://fiadosya.herokuapp.com/auth/register";
+  //const urlPost = "https://fiadosya.herokuapp.com/auth/register";
+
+  // const urlDataClient = "/dataClient.json";
+  const urlLocal = "http://localhost:3005/client";
 
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
   } = useForm();
 
-  const handleInput = (event) => {
+  /* const handleInput = (event) => {
     //setClient({ ...client, [event.target.name]: event.target.value });
     const { name, value } = event.target;
     setClient((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+  };*/
+
+  const onSubmit = async (e) => {
+    try {
+      await axios.post(urlLocal, e).then((res) => console.log(res.status));
+      reset();
+    } catch (error) {
+      console.log(
+        "No se pudo crear el " + ROLES.CLIENT + " con error: " + error
+      );
+      reset();
+    }
   };
 
-  const onSubmit = (e) => {
-    setClient(e);
-    //postRegister();
-  };
-  console.log(client);
-
-  const postRegister = async () => {
-    await axios.post({
-      url: urlPost,
-      method: "POST",
-      data: client,
-    });
+  const postData = async (e) => {
+    try {
+      return await axios.post(urlLocal, e);
+    } catch (error) {
+      console.log(
+        "No se pudo crear el " + ROLES.CLIENT + " con error: " + error
+      );
+    }
   };
 
   useEffect(() => {
@@ -77,7 +89,6 @@ const RegisterPage = () => {
               className="form-control-reg input-reg"
               id="role"
               name="role"
-              onChange={handleInput}
               {...register("role", {
                 required: {
                   value: true,
@@ -106,38 +117,35 @@ const RegisterPage = () => {
             <div className="contenedor-register">
               {/* ------------------------ Inicio de los input ---------------------------*/}
 
-              {watch("role") === "Shop" && (
-                <div className="label-input">
-                  <label htmlFor="user" className="label-login">
-                    Razón Social
-                  </label>
-                  <div className="group-input">
-                    <input
-                      id="razonSocial"
-                      name="razonSocial"
-                      type="text"
-                      placeholder="Ingrese Nombre de la Tienda"
-                      className="input-reg"
-                      onChange={handleInput}
-                      {...register("razonSocial", {
-                        required: {
-                          value: true,
-                          message: "El campo es requerido",
-                        },
-                        pattern: {
-                          value: EXPRESIONES.ADDRESS,
-                          message: "El formato no es correcto",
-                        },
-                      })}
-                    />
-                  </div>
-                  {errors.razonSocial && (
-                    <p className="msg-error-email-reg">
-                      {errors.razonSocial.message}
-                    </p>
-                  )}
+              <div className="label-input">
+                <label htmlFor="user" className="label-login">
+                  Razón Social
+                </label>
+                <div className="group-input">
+                  <input
+                    id="company_name"
+                    name="company_name"
+                    type="text"
+                    placeholder="Ingrese Nombre de la Tienda"
+                    className="input-reg"
+                    {...register("company_name", {
+                      required: {
+                        value: true,
+                        message: "El campo es requerido",
+                      },
+                      pattern: {
+                        value: EXPRESIONES.ADDRESS,
+                        message: "El formato no es correcto",
+                      },
+                    })}
+                  />
                 </div>
-              )}
+                {errors.company_name && (
+                  <p className="msg-error-email-reg">
+                    {errors.company_name.message}
+                  </p>
+                )}
+              </div>
 
               <div className="label-input">
                 <label htmlFor="user" className="label-login">
@@ -145,13 +153,12 @@ const RegisterPage = () => {
                 </label>
                 <div className="group-input">
                   <input
-                    id="name"
-                    name="name"
+                    id="firstName"
+                    name="firstName"
                     type="text"
                     placeholder="Ingrese un Nombre"
                     className="input-reg"
-                    onChange={handleInput}
-                    {...register("name", {
+                    {...register("firstName", {
                       required: {
                         value: true,
                         message: "El campo es requerido",
@@ -163,8 +170,10 @@ const RegisterPage = () => {
                     })}
                   />
                 </div>
-                {errors.name && (
-                  <p className="msg-error-email-reg">{errors.name.message}</p>
+                {errors.firstName && (
+                  <p className="msg-error-email-reg">
+                    {errors.firstName.message}
+                  </p>
                 )}
               </div>
 
@@ -179,7 +188,6 @@ const RegisterPage = () => {
                     type="text"
                     placeholder="Ingrese Apellido"
                     className="input-reg"
-                    onChange={handleInput}
                     {...register("lastName", {
                       required: {
                         value: true,
@@ -210,7 +218,6 @@ const RegisterPage = () => {
                     type="text"
                     placeholder="Ingrese identificación"
                     className="input-reg"
-                    onChange={handleInput}
                     {...register("dni", {
                       required: {
                         value: true,
@@ -244,7 +251,6 @@ const RegisterPage = () => {
                     type="email"
                     placeholder="ejemplo@miemail.com"
                     className="input-reg"
-                    onChange={handleInput}
                     {...register("email", {
                       required: {
                         value: true,
@@ -264,47 +270,16 @@ const RegisterPage = () => {
 
               <div className="label-input">
                 <label htmlFor="user" className="label-login">
-                  Número de Contacto
-                </label>
-                <div className="group-input">
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="text"
-                    placeholder="xxx-xxx-xxxx"
-                    className="input-reg"
-                    onChange={handleInput}
-                    {...register("phone", {
-                      required: {
-                        value: true,
-                        message: "El campo es requerido",
-                      },
-                      pattern: {
-                        value: EXPRESIONES.PHONE,
-                        message:
-                          "El formato del número telefónico no es correcto",
-                      },
-                    })}
-                  />
-                </div>
-                {errors.phone && (
-                  <p className="msg-error-email-reg">{errors.phone.message}</p>
-                )}
-              </div>
-
-              <div className="label-input">
-                <label htmlFor="user" className="label-login">
                   Contraseña
                 </label>
                 <div className="group-input">
                   <input
-                    id="pass"
-                    name="pass"
+                    id="password"
+                    name="password"
                     type="password"
                     placeholder="******"
                     className="input-reg"
-                    onChange={handleInput}
-                    {...register("pass", {
+                    {...register("password", {
                       required: {
                         value: true,
                         message: "El campo es requerido",
@@ -322,8 +297,10 @@ const RegisterPage = () => {
                     })}
                   />
                 </div>
-                {errors.pass && (
-                  <p className="msg-error-email-reg">{errors.pass.message}</p>
+                {errors.password && (
+                  <p className="msg-error-email-reg">
+                    {errors.password.message}
+                  </p>
                 )}
               </div>
 
@@ -333,13 +310,12 @@ const RegisterPage = () => {
                 </label>
                 <div className="group-input">
                   <input
-                    id="address"
-                    name="address"
+                    id="adress"
+                    name="adress"
                     type="text"
                     placeholder="712 Red Bark Ln, Henderson, NV 89011"
                     className="input-reg"
-                    onChange={handleInput}
-                    {...register("address", {
+                    {...register("adress", {
                       required: {
                         value: true,
                         message: "El campo es requerido",
@@ -352,10 +328,8 @@ const RegisterPage = () => {
                     })}
                   />
                 </div>
-                {errors.address && (
-                  <p className="msg-error-email-reg">
-                    {errors.address.message}
-                  </p>
+                {errors.adress && (
+                  <p className="msg-error-email-reg">{errors.adress.message}</p>
                 )}
               </div>
 
@@ -368,7 +342,6 @@ const RegisterPage = () => {
                     type="text"
                     placeholder="Ingresa una Ciudad"
                     className="input-reg"
-                    onChange={handleInput}
                     {...register("city", {
                       required: {
                         value: true,
@@ -393,7 +366,6 @@ const RegisterPage = () => {
                   className="form-control-reg input-reg"
                   id="country"
                   name="country"
-                  onChange={handleInput}
                   {...register("country", {
                     required: {
                       value: true,

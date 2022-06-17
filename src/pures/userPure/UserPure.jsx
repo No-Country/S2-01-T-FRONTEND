@@ -2,68 +2,73 @@ import React from "react";
 
 import "../../pages/auth/login/styles/_loginStyle.scss";
 import logoUser from "../../assets/img/logo-user.png";
+import logoFiado from "../../assets/img/logo-pagos.png";
 import RatingStar from "../../components/rating/RatingStar";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserProvider";
 
 const UserPure = ({ buscar }) => {
-  /*
-  const urlDataClient = "/dataClient.json";
-  const [dataClient, setDataClient] = useState([]);
-  const [dataCard, setDataCard] = useState([]);
+  const { userActive } = useContext(UserContext);
 
-  const getClient = async () => {
-    try {
-      await fetch(urlDataClient)
-        .then((data) => data.json())
-        .then((clientes) => {
-          setDataClient(clientes);
-          setDataCard(clientes);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  if (userActive.role === "client") {
+    const res = buscar.filter((clientFilter) => clientFilter.role === "Shop");
 
-  const filterClient = (aBuscar = "jai") => {
-    const resultFilter = dataCard.filter((element) => {
-      if (
-        element.name.toString().toLowerCase().includes(aBuscar.toLowerCase()) ||
-        element.country.toString().toLowerCase().includes(aBuscar.toLowerCase())
-      ) {
-        return element;
-      }
-    });
-    setDataClient(resultFilter);
-  };
-
-  useEffect(() => {
-    getClient();
-  }, []);
-*/
-  return (
-    <>
-      <div className="container-card">
-        {buscar.map((cliente) => (
-          <div key={cliente.id}>
-            <div className="card-pres">
-              <div className="card-head">
-                <img src={logoUser} alt="" />
-              </div>
-              <div className="card-container">
-                <div className="info-1 ">
-                  {cliente.firstName} {cliente.lastName}
+    return (
+      <>
+        <div className="container-card">
+          {res.map((cliente) => (
+            <div key={cliente.id}>
+              <div className="card-pres">
+                <div className="card-head">
+                  <img src={logoFiado} alt="" />
                 </div>
-                <div className="info-2 show">{cliente.adress}</div>
-                <div className="info-3 show">{cliente.country}</div>
-                <div className="show">
-                  <RatingStar rating={cliente.rating} />
+                <div className="card-container">
+                  <div className="info-1 ">
+                    {cliente.firstName} {cliente.lastName}
+                  </div>
+                  <div className="info-2 show">{cliente.adress}</div>
+                  <div className="info-3 show">{cliente.country}</div>
+                  <div className="show">
+                    <RatingStar rating={cliente.rating} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </>
-  );
+          ))}
+        </div>
+      </>
+    );
+  } else {
+    const res = buscar.filter((clientFilter) => clientFilter.role === "client");
+
+    return (
+      <>
+        <div className="container-card">
+          {res.map((cliente) => (
+            <div key={cliente.id}>
+              <div className="card-pres">
+                <div className="card-head">
+                  <img src={logoUser} alt="" />
+                </div>
+                <div className="card-container">
+                  <div className="info-1 ">
+                    {cliente.firstName} {cliente.lastName}
+                  </div>
+                  <div className="info-2 show">{cliente.adress}</div>
+                  <div className="info-3 show">{cliente.country}</div>
+                  <div className="show">
+                    <RatingStar rating={cliente.rating} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
+    );
+  }
+
+  // const res = buscar.filter((clientFilter) => clientFilter.role === "client");
 };
 
 UserPure.propTypes = {

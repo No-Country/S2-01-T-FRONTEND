@@ -16,53 +16,58 @@ const Navbar = () => {
   console.log(onDesplegar);
 
   return (
-    <div className="navbar">
-      <div className="nav-img">
-        <NavLink to="/app/home">
-          <img src={logo} alt="logo-elFiado" />
-        </NavLink>
-      </div>
-      <nav className="link-nav">
-        {isLogged && (
-          <NavLink className="links" to="/app/search">
-            Buscar
+    <>
+      <div className="navbar">
+        <div className="nav-img">
+          <NavLink to="/app/home">
+            <img src={logo} alt="logo-elFiado" />
           </NavLink>
-        )}
-        {isLogged && userActive.role === "Shop" && (
-          <>
-            <NavLink className="links" to="/app/debts" activeClassName="active">
-              Deudas
-            </NavLink>
-            <NavLink className="links" to="/app/new-credit">
-              Nuevo Credito
-            </NavLink>
-          </>
-        )}
-        <NavLink className="links" to="/about">
-          Nosotros
-        </NavLink>
-        <NavLink className="links" to="/">
-          Contactanos
-        </NavLink>
-      </nav>
-      <nav className="user-perfil">
-        <div className="links">
-          {isLogged ? (
-            <NavLink className="links" to="/app/profile">
-              {`${userActive.firstName} ${userActive.lastName}`}
-            </NavLink>
-          ) : (
-            <NavLink className="links" to="/auth/login">
-              Acceder
+        </div>
+        <nav className="link-nav">
+          {isLogged && (
+            <NavLink className="links" to="/app/search">
+              Buscar
             </NavLink>
           )}
+          {isLogged && userActive.role === "Shop" && (
+            <>
+              <NavLink
+                className="links"
+                to="/app/debts"
+                activeClassName="active"
+              >
+                Deudas
+              </NavLink>
+              <NavLink className="links" to="/app/new-credit">
+                Nuevo Credito
+              </NavLink>
+            </>
+          )}
+          <NavLink className="links" to="/about">
+            Nosotros
+          </NavLink>
+          <NavLink className="links" to="/">
+            Contactanos
+          </NavLink>
+        </nav>
+        <nav className="user-perfil">
+          <div className="links">
+            {isLogged ? (
+              <NavLink className="links" to="/app/profile">
+                {`${userActive.firstName} ${userActive.lastName}`}
+              </NavLink>
+            ) : (
+              <NavLink className="links" to="/auth/login">
+                Acceder
+              </NavLink>
+            )}
+          </div>
+        </nav>
+
+        <div className="cont-icon-menu">
+          <MenuOpenIcon id="icon-menu" onClick={handleDesplegar} />
         </div>
-      </nav>
-
-      <div className="cont-icon-menu">
-        <MenuOpenIcon id="icon-menu" onClick={handleDesplegar} />
       </div>
-
       {onDesplegar && (
         <div className="menu-hamb">
           <nav className="link-nav-hamb">
@@ -103,7 +108,7 @@ const Navbar = () => {
           </nav>
         </div>
       )}
-    </div>
+    </>
   );
 };
 export default Navbar;

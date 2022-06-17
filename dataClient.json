@@ -1,0 +1,104 @@
+{
+  "client": [
+    {
+      "id": "1",
+      "firstName": "Jaime",
+      "lastName": "Agudelo",
+      "idType": "cc",
+      "identification": "12344654",
+      "role": "client",
+      "adress": "Mz 2 Casa 9 Halcones",
+      "city": "Bogotá",
+      "country": "Colombia",
+      "rating": 4
+    },
+    {
+      "id": "2",
+      "firstName": "Bautista",
+      "lastName": "Iglesias",
+      "idType": "ti",
+      "identification": "325488574",
+      "role": "client",
+      "adress": "Calle 11 # 23-12",
+      "city": "Buenos Aires",
+      "country": "Argentina",
+      "rating": 3
+    },
+    {
+      "id": "3",
+      "firstName": "Luciano",
+      "lastName": "Olmedo",
+      "idType": "cc",
+      "identification": "12344654",
+      "role": "client",
+      "adress": "Cll 2 Casa 15 Pretel",
+      "city": "Buenos Aires",
+      "country": "Argentina",
+      "rating": 5
+    },
+    {
+      "id": "4",
+      "firstName": "Gabriel",
+      "lastName": "Navarro",
+      "idType": "ti",
+      "identification": "325488574",
+      "role": "client",
+      "adress": "Calle 11 # 23-12",
+      "city": "Buenos Aires",
+      "country": "Argentina",
+      "rating": 1
+    },
+    {
+      "id": "5",
+      "firstName": "Ezequiel",
+      "lastName": "Sanchez",
+      "idType": "cc",
+      "identification": "12344654",
+      "role": "client",
+      "adress": "Cra 11 # 2A-85",
+      "city": "Barranquilla",
+      "country": "Colombia",
+      "rating": 2
+    },
+    {
+      "id": "6",
+      "firstName": "Abel",
+      "lastName": "Acevedo",
+      "idType": "cc",
+      "identification": "12344654",
+      "role": "client",
+      "adress": "Cra 11 # 2A-85",
+      "city": "Barranquilla",
+      "country": "Colombia",
+      "rating": 2
+    },
+    {
+      "role": "Shop",
+      "company_name": "La Casita",
+      "firstName": "Juan ",
+      "lastName": "Reyes",
+      "dni": "1236548",
+      "email": "juan@gmail.com",
+      "password": "12345678",
+      "adress": "casa Roja",
+      "city": "Tunja",
+      "country": "Colombia",
+      "id": "pRf9CJR",
+      "rating": 5
+    },
+    {
+      "role": "client",
+      "company_name": "Sin Colombia sin mundial",
+      "firstName": "Reinaldo",
+      "lastName": "Rueda",
+      "dni": "63524178",
+      "email": "rey@gmail.com",
+      "password": "12345678",
+      "adress": "La Calle",
+      "city": "Bogotá",
+      "country": "Colombia",
+      "id": "YJOiv4k",
+      "rating": 1
+    }
+  ]
+}
