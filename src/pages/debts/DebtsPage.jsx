@@ -2,15 +2,9 @@ import React from "react";
 import DebtCard from "../../components/debtCard/DebtCard";
 import { Grid } from '@mui/material';
 import "./styles/_debtsPage.scss";
-import axios from 'axios';
+
 
 const DebtsPage = () => {
-
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
-      .then(res => {
-        const persons = res.data;
-        console.log({ persons });
-      })
 
     return (
         <div className="debts-container">
