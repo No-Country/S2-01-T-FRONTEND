@@ -6,15 +6,15 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const Footer = () => {
 
-    const [height, setHeight] = useState(0);
-    const ref = useRef(null);
+    // const [height, setHeight] = useState(0);
+    // const ref = useRef(null);
 
-    useEffect(() => {
-        setHeight(ref.current.offsetHeight)
-    }, []);
-    console.log(height);
+    // useEffect(() => {
+    //     setHeight(ref.current.offsetHeight)
+    // }, []);
+    // console.log(height);
     
-    return (<footer className='footer' ref={ref}>
+    return (<footer className='footer'>
 
             <Grid container direction="row" justifyContent="space-around">
                 <Grid item sx={{ mt: 2 }} >
