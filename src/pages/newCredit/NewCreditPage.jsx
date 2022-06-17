@@ -12,12 +12,30 @@ const NewCredit = () => {
         monto: /^\d[0-9]{0,5}$/ // numerico, hasta 5 cifras.
     };
 
+    // formato moneda para el monto a fiar
+    const formatted = new Intl.NumberFormat('de-DE', {
+        style: 'currency',
+        currency: 'USD',
+    }).format(monto.campo);
+
+    // function parseLocaleNumber(stringNumber) {
+    //     const thousandSeparator = Intl.NumberFormat().format(11111).replace(/\p{Number}/gu, '');
+    //     const decimalSeparator = Intl.NumberFormat().format(1.1).replace(/\p{Number}/gu, '');
+    
+    //     return parseFloat(stringNumber
+    //         .replace(new RegExp('\\' + thousandSeparator, 'g'), '')
+    //         .replace(new RegExp('\\' + decimalSeparator), '.')
+    //     );
+    // }
+
+    // const num = parseLocaleNumber(formatter);
+
     return (
         <div className="new-credit">
             <h1 className="new-credit-title">Crear un nuevo fiado</h1>
             <div className="container-form">
                 <div className="container-input">
-                    <form>
+                    <form className="form">
                         <InputComp
                             label="DNI cliente (sin puntos ni comas)"
                             name="dni"
@@ -35,12 +53,14 @@ const NewCredit = () => {
                             name="password"
                             id="password"
                             placeHold="Ingrese un monto"
-                            type="monto"
+                            type="currency"
                             msgError="Ingrese un monto válido"
                             expresionRegular={expresiones.monto}
                             estado={monto}
                             setEstado={setMonto}
                         />
+
+                        <h2>{monto ? '$ ' + formatted.slice(0, -2) : ''}</h2>
 
                         <div className="container-input">
                             <button

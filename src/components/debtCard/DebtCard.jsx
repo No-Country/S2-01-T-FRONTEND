@@ -5,15 +5,15 @@ import "./styles/_debtCard.scss";
 const DebtCard = () => {
     return (
         <>
-            <Card variant="outlined" sx={{ minWidth: 575 }} >
+            <Card variant="outlined" sx={{ width: '85vw' }}>
                 <CardContent justifyContent="space-between">
                     <Typography color="text.secondary" align="right">
                         21:07 14/6/22
                     </Typography>
-                    <Typography color="text.secondary">
+                    <Typography color="text.primary">
                         "Nombre del comercio"
                     </Typography>
-                    <Typography color="text.primary">
+                    <Typography color="error.main">
                         $1.234,56
                     </Typography>
                 </CardContent>

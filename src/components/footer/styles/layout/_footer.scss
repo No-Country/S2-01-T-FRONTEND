@@ -2,3 +2,22 @@ footer {
     background-color: var(--orange);
     color: var(--white);
 }
+
+//media queries
+@media screen and (max-width: 768px) {
+    .grid-item-contacto {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .grid-item-servicios {
+        display: none;
+    }
+}
+
+// @media screen and (max-width: 480px) {
+//     .grid-item-recursos {
+//         display: none;
+//     }
+// }
