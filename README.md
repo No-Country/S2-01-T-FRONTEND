@@ -1,13 +1,21 @@
 ## FIADOS.COM
 
-## Getting Started with Create React App
+Somos un grupo unido por la necesidad de responder a un problema que a todos nos afecta: La confianza respecto a los pagos. Para eso necesitaron crear una aplicación que califique a los usuarios a su cumplimiento en los pagos. En nuestra aplicación vas a encontrar clientes y comerciantes, de manera tal que todos puedan calificarse. Nuestra misión es llegar a todos aquellos negocios que sigan confiando en sus clientes y que éstos puedan confiar en los comerciantes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Equipo No Country
 
-## Available Scripts
+##Front-End
+Ezequiel Sánchez
+Luciano Olmedo
+Jaime Agudelo
+Bautista Iglesias
+##Back-end
+marcos goncheff
+Abel Acevedo
+gabriel navarro
 
-In the project directory, you can run:
 
+<<<<<<< HEAD
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -43,3 +51,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+>>>>>>> e9778ce9ba2e16a1adc722460058c3d059310f72
