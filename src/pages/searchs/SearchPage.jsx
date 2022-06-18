@@ -15,7 +15,7 @@ const Search = () => {
   const [dataClient, setDataClient] = useState([]);
   const [dataCard, setDataCard] = useState([]);
 
-  const filterClient = (aBuscar = "jai") => {
+  const filterClient = (aBuscar = "") => {
     const resultFilter = dataCard.filter((element) => {
       if (
         element.name.toString().toLowerCase().includes(aBuscar.toLowerCase()) ||

@@ -3,8 +3,9 @@ import React, { createContext, useState } from "react";
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [userActive, setUserActive] = useState({
-    role: "Shop",
+  /*
+  const userPrueba = {
+    role: "shop",
     company_name: "La Casita",
     firstName: "Juan ",
     lastName: "Reyes",
@@ -16,8 +17,10 @@ export const UserProvider = ({ children }) => {
     country: "Colombia",
     id: "pRf9CJR",
     rating: 5,
-  });
-  const [isLogged, setIsLogged] = useState(true);
+  } */
+
+  const [userActive, setUserActive] = useState({});
+  const [isLogged, setIsLogged] = useState(false);
 
   const contextValue = {
     userActive,

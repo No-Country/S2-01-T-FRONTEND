@@ -21,7 +21,7 @@ const LoginPage = () => {
   //   const handleInput = (event) => {
   //     setDataUser({ ...dataUser, [event.target.name]: event.target.value });
   //   };
-  const urlLogin = "https://fiadosya.herokuapp.com/";
+  const urlLogin = "https://fiados.herokuapp.com/auth/login/";
   const handleSetData = () => {
     axios.post(urlLogin + "auth/login");
   };

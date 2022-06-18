@@ -10,6 +10,8 @@ const Navbar = () => {
   const [onDesplegar, setOnDesplegar] = useState(false);
   const { isLogged, userActive } = useContext(UserContext);
 
+  console.log(` User desde Navbar ${userActive}`);
+
   const handleDesplegar = () => {
     setOnDesplegar(!onDesplegar);
   };
@@ -29,7 +31,7 @@ const Navbar = () => {
               Buscar
             </NavLink>
           )}
-          {isLogged && userActive.role === "Shop" && (
+          {isLogged && userActive.role === "shop" && (
             <>
               <NavLink
                 className="links"
@@ -80,7 +82,7 @@ const Navbar = () => {
                 Buscar
               </NavLink>
             )}
-            {isLogged && userActive.role === "Shop" && (
+            {isLogged && userActive.role === "shop" && (
               <>
                 <NavLink
                   className="links"

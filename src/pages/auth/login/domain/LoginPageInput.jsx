@@ -17,25 +17,35 @@ const LoginPage = () => {
   const [pass, setPass] = useState({ campo: "", valido: null });
   const [dataImport, setDataImport] = useState([]);
 
-  const { userActive, setUserActive, setIsLogged } = useContext(UserContext);
+  const { setUserActive, setIsLogged } = useContext(UserContext);
 
   // --------------------------------------------------------------------------
 
   //   const handleInput = (event) => {
   //     setDataUser({ ...dataUser, [event.target.name]: event.target.value });
   //   };
-  const urlLogin = "https://fiadosya.herokuapp.com/auth/login";
+  const urlLogin = "https://fiados.herokuapp.com/auth/login";
 
   //? Metodo para hacer la peticion post
   const handleSetData = (e) => {
     e.preventDefault();
     addObject();
 
-    axios.post(urlLogin, dataImport);
+    try {
+      axios.post(urlLogin, dataImport).then((data) => {
+        console.log(data);
+        setUserActive(data.data);
+        setIsLogged(true);
+        // * Reset los campos
+        setPass({ campo: "", valido: null });
+        setUser({ campo: "", valido: null });
+      });
+    } catch (error) {
+      setUserActive(null);
+      setIsLogged(false);
 
-    // * Reset los campos
-    setPass({ campo: "", valido: null });
-    setUser({ campo: "", valido: null });
+      // * Reset los campos
+    }
   };
 
   const addObject = () => {
