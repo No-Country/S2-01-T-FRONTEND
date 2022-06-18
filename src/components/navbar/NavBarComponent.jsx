@@ -8,14 +8,17 @@ import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 
 const Navbar = () => {
   const [onDesplegar, setOnDesplegar] = useState(false);
-  const { isLogged, userActive } = useContext(UserContext);
-
-  console.log(` User desde Navbar ${userActive}`);
+  const { isLogged, userActive, setIsLogged, setUserActive } =
+    useContext(UserContext);
 
   const handleDesplegar = () => {
     setOnDesplegar(!onDesplegar);
   };
-  console.log(onDesplegar);
+
+  const handleLogout = () => {
+    setIsLogged(false);
+    setUserActive({});
+  };
 
   return (
     <>
@@ -53,11 +56,16 @@ const Navbar = () => {
           </NavLink>
         </nav>
         <nav className="user-perfil">
-          <div className="links">
+          <div className="">
             {isLogged ? (
-              <NavLink className="links" to="/app/profile">
-                {`${userActive.firstName} ${userActive.lastName}`}
-              </NavLink>
+              <>
+                <NavLink className="links" to="/app/profile">
+                  {`${userActive.firstName} ${userActive.lastName}`}
+                </NavLink>
+                <label type="button" className="links" onClick={handleLogout}>
+                  Cerrar Sesión
+                </label>
+              </>
             ) : (
               <NavLink className="links" to="/auth/login">
                 Acceder

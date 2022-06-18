@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Button,
   Card,
@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import "./styles/_debtCard.scss";
+import RatingController from "../rating/RatingController";
 
 const DebtCard = () => {
   return (
@@ -21,6 +22,7 @@ const DebtCard = () => {
             <Typography color="error.main">$1.234,56</Typography>
           </CardContent>
           <CardActions>
+            <RatingController />
             <Button size="small">Saldar</Button>
           </CardActions>
         </div>

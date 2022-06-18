@@ -6,6 +6,7 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import { UserContext } from "../../providers/UserProvider";
 import { useContext } from "react";
+import RatingStar from "../rating/RatingStar";
 
 function UserInfo() {
   const { userActive } = useContext(UserContext);
@@ -50,7 +51,7 @@ function UserInfo() {
             </Container>
             <Container>
               <h3>Identificación</h3>
-              <p>Reservado Para identificación</p>
+              <RatingStar rating={4} />
             </Container>
           </Grid>
         </Grid>
