@@ -16,8 +16,8 @@ Somos un grupo unido por la necesidad de responder a un problema que a todos nos
 [Gabriel Navarro](https://www.linkedin.com/in/gabriel-navarro-233388219/)
 
 **Tecnologias Usadas:**</br>
-FrontEnd:Html,CSS,JS,REACT,Material UI
-Backend:Java,SpringBoot,PostreSQL
+**FrontEnd: Html, CSS, JS, REACT, Material UI** </br>
+**Backend: Java, SpringBoot, PostreSQL**
 
 
 #### Link Swagger: http://localhost:8080/swagger-ui/index.html
