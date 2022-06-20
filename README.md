@@ -4,52 +4,20 @@ Somos un grupo unido por la necesidad de responder a un problema que a todos nos
 
 ##Equipo No Country
 
-##Front-End
-Ezequiel Sánchez
-Luciano Olmedo
-Jaime Agudelo
-Bautista Iglesias
-##Back-end
-marcos goncheff
-Abel Acevedo
-gabriel navarro
+**Front-End:**</br>
+[Ezequiel Sanchez](https://www.linkedin.com/in/ezequiel-sanchez-398119167/) </br>
+[Luciano Olmedo](https://www.linkedin.com/in/lucianonicolasolmedo)</br>
+[Jaime Agudelo](https://www.linkedin.com/in/jaime-agudelo-bentham/)</br>
+[Bautista Iglesias](https://www.linkedin.com/in/bautista-iglesias-66b575189/)
+
+**Back-End:**</br>
+[Marcos Goncheff](https://www.linkedin.com/in/marcos-paz-goncheff/)</br>
+[Abel Acevedo](https://www.linkedin.com/in/abel-fernando-acevedo/)</br>
+[Gabriel Navarro](https://www.linkedin.com/in/gabriel-navarro-233388219/)
+
+**Tecnologias Usadas:**</br>
+FrontEnd:Html,CSS,JS,REACT,Material UI
+Backend:Java,SpringBoot,PostreSQL
 
 
-<<<<<<< HEAD
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
->>>>>>> e9778ce9ba2e16a1adc722460058c3d059310f72
+#### Link Swagger: http://localhost:8080/swagger-ui/index.html
