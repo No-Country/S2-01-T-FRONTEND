@@ -1,6 +1,13 @@
 import React from "react";
-import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+} from "@mui/material";
 import "./styles/_debtCard.scss";
+import RatingController from "../rating/RatingController";
 
 const DebtCard = ({ deuda }) => {
 
@@ -35,3 +42,22 @@ const DebtCard = ({ deuda }) => {
 };
 
 export default DebtCard;
+/**
+ * <Card key={e.id} variant="outlined" sx={{ width: "85vw" }}>
+          <CardContent justifyContent="space-between">
+            <Typography color="text.secondary" align="right">
+              21:07 14/6/22
+            </Typography>
+            <Typography color="text.primary">
+              {console.log(e.debtResponseList)}
+            </Typography>
+            <Typography color="error.main">$1.234,56</Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Saldar</Button>
+          </CardActions>
+        </Card>
+ * 
+ * 
+ * 
+ */

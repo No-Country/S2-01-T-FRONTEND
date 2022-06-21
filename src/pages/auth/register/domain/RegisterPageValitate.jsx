@@ -15,10 +15,10 @@ const RegisterPage = () => {
   const [client, setClient] = useState(null);
 
   // --------------------------------------------------------------------------
-  //const urlPost = "https://fiadosya.herokuapp.com/auth/register";
+  const urlPost = "https://fiados.herokuapp.com/auth/register";
 
   // const urlDataClient = "/dataClient.json";
-  const urlLocal = "http://localhost:3005/client";
+  // const urlLocal = "http://localhost:3005/client";
 
   const {
     register,
@@ -39,23 +39,13 @@ const RegisterPage = () => {
 
   const onSubmit = async (e) => {
     try {
-      await axios.post(urlLocal, e).then((res) => console.log(res.status));
+      await axios.post(urlPost, e).then((res) => console.log(res.status));
       reset();
     } catch (error) {
       console.log(
         "No se pudo crear el " + ROLES.CLIENT + " con error: " + error
       );
       reset();
-    }
-  };
-
-  const postData = async (e) => {
-    try {
-      return await axios.post(urlLocal, e);
-    } catch (error) {
-      console.log(
-        "No se pudo crear el " + ROLES.CLIENT + " con error: " + error
-      );
     }
   };
 
