@@ -8,7 +8,7 @@ Somos un grupo unido por la necesidad de responder a un problema que a todos nos
 [Ezequiel Sanchez](https://www.linkedin.com/in/ezequiel-sanchez-398119167/) </br>
 [Luciano Olmedo](https://www.linkedin.com/in/lucianonicolasolmedo)</br>
 [Jaime Agudelo](https://www.linkedin.com/in/jaime-agudelo-bentham/)</br>
-[Bautista Iglesias](https://www.linkedin.com/in/bautista-iglesias-66b575189/)
+[Bautista Iglesias](https://www.linkedin.com/in/juanbautistaiglesias/)
 
 **Back-End:**</br>
 [Marcos Goncheff](https://www.linkedin.com/in/marcos-paz-goncheff/)</br>
