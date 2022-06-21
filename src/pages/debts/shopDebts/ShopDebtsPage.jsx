@@ -6,10 +6,10 @@ import axios from 'axios';
 
 const DebtsPage = () => {
 
-    const [userId, setUserId] = useState(14);
+    const [userId, setUserId] = useState(15);
     const [deudas, setDeudas] = useState([]);
 
-    const token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdGllcyI6WyJST0xFX0NVU1RPTUVSIl0sInN1YiI6ImFzdHJpbmdAZ21haWwuY29tIiwiaWF0IjoxNjU1NTA3Nzg1LCJleHAiOjE2NTU1NDM3ODV9.gXgP8E1l6WNPWHbW7YLhp4dbibGUn5kItUOa2qpdROc";    
+    const token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdGllcyI6WyJST0xFX01FUkNIQU5UIl0sInN1YiI6ImJzdHJpbmdAZ21haWwuY29tIiwiaWF0IjoxNjU1NTA3MzYwLCJleHAiOjE2NTU1NDMzNjB9.EmVSNVa_oyVN9HEGPwYlgZIM37eQISq9MjEsLO3kL2g";    
 
     let config = {
         headers: {
