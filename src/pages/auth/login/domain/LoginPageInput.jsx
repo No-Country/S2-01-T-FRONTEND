@@ -15,7 +15,7 @@ const LoginPage = () => {
   // ----------------------- Variables de estados -----------------------------
   const [user, setUser] = useState({ campo: "", valido: null });
   const [pass, setPass] = useState({ campo: "", valido: null });
-  const [dataImport, setDataImport] = useState([]);
+  // const [dataImport, setDataImport] = useState([]);
 
   const { setUserActive, setIsLogged } = useContext(UserContext);
 
@@ -29,32 +29,34 @@ const LoginPage = () => {
   //? Metodo para hacer la peticion post
   const handleSetData = (e) => {
     e.preventDefault();
-    addObject();
+    // addObject();
 
-    try {
-      axios.post(urlLogin, dataImport).then((data) => {
-        console.log(data);
-        setUserActive(data.data);
-        setIsLogged(true);
-        // * Reset los campos
-        setPass({ campo: "", valido: null });
-        setUser({ campo: "", valido: null });
-      });
-    } catch (error) {
-      setUserActive(null);
-      setIsLogged(false);
+      axios.post(urlLogin, { email: user.campo, password: pass.campo })
+        .then((data) => {
+          console.log(data);
 
-      // * Reset los campos
-    }
+          localStorage.setItem('token', data.data.token);
+
+          setUserActive(data.data);
+          setIsLogged(true);
+          // * Reset los campos
+          setPass({ campo: "", valido: null });
+          setUser({ campo: "", valido: null });
+        }).catch(error => {
+          setUserActive(null);
+          setIsLogged(false);
+          console.log(error.response.data)
+          // * Reset los campos
+        })
   };
 
-  const addObject = () => {
-    const envio = {
-      email: user.campo,
-      password: pass.campo,
-    };
-    setDataImport(envio);
-  };
+  // const addObject = () => {
+  //   const envio = {
+  //     email: user.campo,
+  //     password: pass.campo,
+  //   };
+  //   setDataImport(envio);
+  // };
 
   useEffect(() => {
     document.title = "elFiado.com | Login";

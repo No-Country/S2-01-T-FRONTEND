@@ -23,7 +23,10 @@ const LoginPage = () => {
   //   };
   const urlLogin = "https://fiados.herokuapp.com/auth/login/";
   const handleSetData = () => {
-    axios.post(urlLogin + "auth/login");
+      axios.post(urlLogin + "auth/login")
+        .then(response => {
+          console.log(response)
+        }).catch(e => console.log(e))
   };
 
   // const userProps = {

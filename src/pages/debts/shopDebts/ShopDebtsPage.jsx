@@ -9,7 +9,7 @@ const DebtsPage = () => {
     const [userId, setUserId] = useState(15);
     const [deudas, setDeudas] = useState([]);
 
-    const token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdGllcyI6WyJST0xFX01FUkNIQU5UIl0sInN1YiI6ImJzdHJpbmdAZ21haWwuY29tIiwiaWF0IjoxNjU1NTA3MzYwLCJleHAiOjE2NTU1NDMzNjB9.EmVSNVa_oyVN9HEGPwYlgZIM37eQISq9MjEsLO3kL2g";    
+    const token = localStorage.getItem('token');
 
     let config = {
         headers: {
