@@ -36,15 +36,19 @@ const Navbar = () => {
           )}
           {isLogged && userActive.role === "shop" && (
             <>
+              <NavLink className="links" to="/app/new-credit">
+                Nuevo Credito
+              </NavLink>
+            </>
+          )}
+          {isLogged && userActive.role === "client" && (
+            <>
               <NavLink
                 className="links"
                 to="/app/debts"
                 activeClassName="active"
               >
                 Deudas
-              </NavLink>
-              <NavLink className="links" to="/app/new-credit">
-                Nuevo Credito
               </NavLink>
             </>
           )}
