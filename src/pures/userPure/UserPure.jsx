@@ -12,7 +12,6 @@ const UserPure = ({ buscar }) => {
 
   if (userActive.role === "client") {
     const res = buscar.filter((clientFilter) => clientFilter.role === "shop");
-    console.log(buscar);
 
     return (
       <>

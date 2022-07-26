@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import test from "../../assets/img/test.svg";
 import "../../pages/auth/login/styles/_loginStyle.scss";
 
