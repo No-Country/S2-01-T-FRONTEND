@@ -24,7 +24,7 @@ const LoginPage = () => {
   //   const handleInput = (event) => {
   //     setDataUser({ ...dataUser, [event.target.name]: event.target.value });
   //   };
-  // const urlLogin = "https://fiados.herokuapp.com/auth/login";
+  // const urlLogin = "https://restserver-elfiado.herokuapp.com/api/auth/login";
   const urlLogin = "http://localhost:8080/api/auth/login";
 
   //? Metodo para hacer la peticion post
