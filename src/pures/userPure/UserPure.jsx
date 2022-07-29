@@ -11,7 +11,9 @@ const UserPure = ({ buscar }) => {
   const { userActive } = useContext(UserContext);
 
   if (userActive.role === "client") {
-    const res = buscar.filter((clientFilter) => clientFilter.role === "shop");
+    const res = buscar.filter(
+      (clientFilter) => clientFilter.role === "SHOP_ROLE"
+    );
 
     return (
       <>
@@ -39,7 +41,9 @@ const UserPure = ({ buscar }) => {
       </>
     );
   } else {
-    const res = buscar.filter((clientFilter) => clientFilter.role === "client");
+    const res = buscar.filter(
+      (clientFilter) => clientFilter.role === "CLIENT_ROLE"
+    );
 
     return (
       <>

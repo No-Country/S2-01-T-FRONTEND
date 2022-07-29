@@ -10,7 +10,6 @@ const Search = () => {
   const handleInput = (e) => {
     setSearch(e.target.value);
     filterClient(e.target.value);
-    console.log(search);
   };
 
   const [dataClient, setDataClient] = useState([]);
@@ -18,13 +17,19 @@ const Search = () => {
 
   const filterClient = (aBuscar = "") => {
     const resultFilter = dataCard.filter((element) => {
-      console.log(element.name);
       if (
         element.firstName
           .toString()
           .toLowerCase()
           .includes(aBuscar.toLowerCase()) ||
-        element.country.toString().toLowerCase().includes(aBuscar.toLowerCase())
+        element.country
+          .toString()
+          .toLowerCase()
+          .includes(aBuscar.toLowerCase()) ||
+        element.lastName
+          .toString()
+          .toLowerCase()
+          .includes(aBuscar.toLowerCase())
       ) {
         return element;
       }

@@ -13,8 +13,7 @@ import { PublicRouter } from "./PublicRouter";
 
 export const MainRouter = () => {
   //? Validacion de usuario logeado
-  const { isLogged, userActive } = useContext(UserContext);
-  console.log(userActive);
+  const { isLogged } = useContext(UserContext);
 
   return (
     <BrowserRouter>

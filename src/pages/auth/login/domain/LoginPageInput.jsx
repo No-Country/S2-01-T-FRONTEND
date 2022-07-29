@@ -15,7 +15,7 @@ const LoginPage = () => {
   // ----------------------- Variables de estados -----------------------------
   const [user, setUser] = useState({ campo: "", valido: null });
   const [pass, setPass] = useState({ campo: "", valido: null });
-  const [dataImport, setDataImport] = useState([]);
+  // const [dataImport, setDataImport] = useState([]);
 
   const { setUserActive, setIsLogged } = useContext(UserContext);
 
@@ -24,17 +24,18 @@ const LoginPage = () => {
   //   const handleInput = (event) => {
   //     setDataUser({ ...dataUser, [event.target.name]: event.target.value });
   //   };
-  const urlLogin = "https://fiados.herokuapp.com/auth/login";
+  // const urlLogin = "https://fiados.herokuapp.com/auth/login";
+  const urlLogin = "http://localhost:8080/api/auth/login";
 
   //? Metodo para hacer la peticion post
   const handleSetData = (e) => {
     e.preventDefault();
-    addObject();
+    let dataEnvio = { email: user.campo, password: pass.campo };
 
     try {
-      axios.post(urlLogin, dataImport).then((data) => {
-        console.log(data);
-        setUserActive(data.data);
+      axios.post(urlLogin, dataEnvio).then((data) => {
+        setUserActive(data.data.user);
+        console.log(data.data);
         setIsLogged(true);
         // * Reset los campos
         setPass({ campo: "", valido: null });
@@ -48,13 +49,13 @@ const LoginPage = () => {
     }
   };
 
-  const addObject = () => {
-    const envio = {
-      email: user.campo,
-      password: pass.campo,
-    };
-    setDataImport(envio);
-  };
+  // const addObject = () => {
+  //   const envio = {
+  //     email: user.campo,
+  //     password: pass.campo,
+  //   };
+  //   setDataImport(envio);
+  // };
 
   useEffect(() => {
     document.title = "elFiado.com | Login";
